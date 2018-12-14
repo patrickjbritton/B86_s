@@ -2,7 +2,7 @@
 /**
  * Custom hooks functions for different layout in widget section.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 
 #. Author of the theme
-msgid "AquariusThemes"
+msgid "B86"
 msgstr ""
 
 #: inc/customizer/B86_s-innerpage-panel.php:101
@@ -365,8 +365,8 @@ msgid ""
 "features that lets you write articles and blog posts with ease. It uses the "
 "best clean SEO practices, responsive HTML5, and on top of that, it’s fast, "
 "simple, and easy to use.  Use the Customizer to add your own background, "
-"page layout, site width and more. Get free support at https://aquariusthemes."
-"com/support/ and check the demo at https://aquariusthemes.com/demo/B86_s/"
+"page layout, site width and more. Get free support at https://B86."
+"com/support/ and check the demo at https://B86.com/demo/B86_s/"
 msgstr ""
 
 #: inc/customizer/B86_s-homepage-panel.php:44
@@ -415,11 +415,11 @@ msgid "Homepage Sections Setups"
 msgstr ""
 
 #. Author URI of the theme
-msgid "https://aquariusthemes.com"
+msgid "https://B86.com"
 msgstr ""
 
 #. URI of the theme
-msgid "https://aquariusthemes.com/wordpress-themes/B86_s"
+msgid "https://B86.com/wordpress-themes/B86_s"
 msgstr ""
 
 #: inc/metaboxes/B86_s-page-metabox.php:82

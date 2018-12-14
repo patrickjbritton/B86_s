@@ -4,7 +4,7 @@
  *
  * Widget show the call to action with shortcode inserted.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

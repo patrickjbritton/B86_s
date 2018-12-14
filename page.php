@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

@@ -4,7 +4,7 @@
  *
  * This is the template that displays all widgets included in homepage widget area.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

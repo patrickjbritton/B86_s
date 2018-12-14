@@ -4,7 +4,7 @@
  *
  * Widget show the woocommerce category and products of it.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

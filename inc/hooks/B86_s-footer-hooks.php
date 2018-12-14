@@ -2,7 +2,7 @@
 /**
  * Custom hooks functions are define about footer section.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */
@@ -125,9 +125,9 @@ if( ! function_exists( 'B86_s_footer_site_info_section' ) ) :
 			</span>
 			<span class="sep"> | </span>
 			<?php
-			$B86_s_author_url = 'http://AquariusThemes.com/';
+			$B86_s_author_url = 'http://B86.com/';
 			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'B86_s' ), 'B86_s', '<a href="'. esc_url( $B86_s_author_url ).'" rel="designer" target="_blank">AquariusThemes</a>' );
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'B86_s' ), 'B86_s', '<a href="'. esc_url( $B86_s_author_url ).'" rel="designer" target="_blank">B86</a>' );
 			?>
 		</div><!-- .site-info -->
 		<?php

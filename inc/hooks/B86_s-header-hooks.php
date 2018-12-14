@@ -2,7 +2,7 @@
 /**
  * Custom hooks functions are define about header section.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

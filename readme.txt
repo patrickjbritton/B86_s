@@ -1,6 +1,6 @@
 === B86_s ===
 
-Contributors:       aquariusthemes
+Contributors:       B86
 Requires at least:  WordPress 4.0
 Tested up to:       WordPress 4.9
 Requires PHP:       5.2.4
@@ -20,11 +20,11 @@ B86_s is a modern ecommerce theme with creative design and powerful features tha
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-Check further documentation here: https://aquariusthemes.com/documentation/B86_s/
+Check further documentation here: https://B86.com/documentation/B86_s/
 
 == Copyright ==
 
-B86_s WordPress Theme, Copyright 2018 AquariusThemes.
+B86_s WordPress Theme, Copyright 2018 B86.
 B86_s is distributed under the terms of the GNU GPL
 
 Some functions about widgets are inspired from VMag.

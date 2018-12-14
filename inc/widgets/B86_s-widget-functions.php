@@ -2,7 +2,7 @@
 /**
  * B86_s custom function and work related to widgets.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

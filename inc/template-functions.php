@@ -2,7 +2,7 @@
 /**
  * Additional features to allow styling of the templates
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */
@@ -503,7 +503,7 @@ if(!function_exists('B86_s_ocdi_import_files')){
                 'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'assets/demo-data/customizer-settings.dat',
                 'import_preview_image_url'     => get_template_directory_uri().'/screenshot.jpg',
                 'import_notice'                => __( 'After you import this demo, you might have to setup the menu separately.', 'B86_s' ),
-                'preview_url'                  => 'https://aquariusthemes.com/demo/B86_s/',
+                'preview_url'                  => 'https://B86.com/demo/B86_s/',
             )
         );
     }

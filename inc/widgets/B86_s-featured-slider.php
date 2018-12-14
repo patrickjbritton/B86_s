@@ -4,7 +4,7 @@
  *
  * Widget to display posts from selected categories in featured slider ( slider + featured section )
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

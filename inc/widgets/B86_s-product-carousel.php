@@ -4,7 +4,7 @@
  *
  * Widget show the posts from selected categories in carousel layouts.
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */

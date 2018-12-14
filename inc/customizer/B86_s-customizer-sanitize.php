@@ -2,7 +2,7 @@
 /**
  * File to sanitize customizer field
  *
- * @package AquariusThemes
+ * @package B86
  * @subpackage B86_s
  * @since 1.0.0
  */
