@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 

@@ -3,7 +3,7 @@
  * File to sanitize customizer field
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -12,7 +12,7 @@
  *
  * @since 1.0.1
  */
-function ghumti_sanitize_checkbox( $input ) {
+function B86_s_sanitize_checkbox( $input ) {
     //returns true if checkbox is checked
     return ( ( isset( $input ) && true == $input ) ? true : false );
 }
@@ -22,7 +22,7 @@ function ghumti_sanitize_checkbox( $input ) {
  *
  * @since 1.0.0
  */
-function ghumti_sanitize_repeater( $input ){
+function B86_s_sanitize_repeater( $input ){
     $input_decoded = json_decode( $input, true );
     
     if( !empty( $input_decoded ) ) {
@@ -42,10 +42,10 @@ function ghumti_sanitize_repeater( $input ){
  *
  * @since 1.0.0
  */
-function ghumti_sanitize_site_layout( $input ) {
+function B86_s_sanitize_site_layout( $input ) {
     $valid_keys = array(
-        'fullwidth_layout' => __( 'Fullwidth Layout', 'ghumti' ),
-        'boxed_layout'     => __( 'Boxed Layout', 'ghumti' )
+        'fullwidth_layout' => __( 'Fullwidth Layout', 'B86_s' ),
+        'boxed_layout'     => __( 'Boxed Layout', 'B86_s' )
     );
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;
@@ -59,10 +59,10 @@ function ghumti_sanitize_site_layout( $input ) {
  *
  * @since 1.0.0
  */
-function ghumti_sanitize_switch_option( $input ) {
+function B86_s_sanitize_switch_option( $input ) {
     $valid_keys = array(
-        'show'  => __( 'Show', 'ghumti' ),
-        'hide'  => __( 'Hide', 'ghumti' )
+        'show'  => __( 'Show', 'B86_s' ),
+        'hide'  => __( 'Hide', 'B86_s' )
     );
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;
@@ -76,11 +76,11 @@ function ghumti_sanitize_switch_option( $input ) {
  *
  * @since 1.0.0
  */
-function ghumti_sanitize_header_layouts( $input ) {
+function B86_s_sanitize_header_layouts( $input ) {
     $valid_keys = array(
-        'left-logo'  => esc_html__( 'Logo on Left', 'ghumti' ),
-        'center-logo'  => esc_html__( 'Logo on Center', 'ghumti' ),
-        'right-logo'  => esc_html__( 'Logo on Right', 'ghumti' ),
+        'left-logo'  => esc_html__( 'Logo on Left', 'B86_s' ),
+        'center-logo'  => esc_html__( 'Logo on Center', 'B86_s' ),
+        'right-logo'  => esc_html__( 'Logo on Right', 'B86_s' ),
     );
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;
@@ -94,7 +94,7 @@ function ghumti_sanitize_header_layouts( $input ) {
  *
  * @since 1.0.0
  */
-function ghumti_sanitize_mulitple_checkbox( $values ) {
+function B86_s_sanitize_mulitple_checkbox( $values ) {
 
     $multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
 
@@ -105,73 +105,73 @@ function ghumti_sanitize_mulitple_checkbox( $values ) {
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_customize_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_customize_register()
  *
  * @return void
  */
-function ghumti_customize_partial_blogname() {
+function B86_s_customize_partial_blogname() {
     bloginfo( 'name' );
 }
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_customize_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_customize_register()
  *
  * @return void
  */
-function ghumti_customize_partial_blogdescription() {
+function B86_s_customize_partial_blogdescription() {
     bloginfo( 'description' );
 }
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_footer_settings_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_footer_settings_register()
  *
  * @return void
  */
-function ghumti_customize_partial_copyright() {
-    return get_theme_mod( 'ghumti_copyright_text' );
+function B86_s_customize_partial_copyright() {
+    return get_theme_mod( 'B86_s_copyright_text' );
 }
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_design_settings_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_design_settings_register()
  *
  * @return void
  */
-function ghumti_customize_partial_related_title() {
-    return get_theme_mod( 'ghumti_related_posts_title' );
+function B86_s_customize_partial_related_title() {
+    return get_theme_mod( 'B86_s_related_posts_title' );
 }
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_design_settings_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_design_settings_register()
  *
  * @return void
  */
-function ghumti_customize_partial_archive_more() {
-    return get_theme_mod( 'ghumti_archive_read_more_text' );
+function B86_s_customize_partial_archive_more() {
+    return get_theme_mod( 'B86_s_archive_read_more_text' );
 }
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Ghumti 1.0.0
- * @see ghumti_header_settings_register()
+ * @since B86_s 1.0.0
+ * @see B86_s_header_settings_register()
  *
  * @return void
  */
-function ghumti_customize_partial_ticker_caption() {
-    return get_theme_mod( 'ghumti_ticker_caption' );
+function B86_s_customize_partial_ticker_caption() {
+    return get_theme_mod( 'B86_s_ticker_caption' );
 }
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
@@ -180,8 +180,8 @@ function ghumti_customize_partial_ticker_caption() {
  *
  * @since 1.0.0
  */
-function ghumti_featured_posts_active_callback( $control ) {
-    if ( $control->manager->get_setting( 'ghumti_top_featured_option' )->value() == 'show' ) {
+function B86_s_featured_posts_active_callback( $control ) {
+    if ( $control->manager->get_setting( 'B86_s_top_featured_option' )->value() == 'show' ) {
         return true;
     } else {
         return false;

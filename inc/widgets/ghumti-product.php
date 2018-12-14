@@ -5,21 +5,21 @@
  * Widget show the woocommerce products.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_product extends WP_Widget {
+class B86_s_product extends WP_Widget {
 /**
 * Register Widget with Wordpress
 * 
 */
 public function __construct() {
   $widget_ops = array( 
-    'classname' => 'ghumti_product',
-    'description' => __( 'Slider with woocommerce products.', 'ghumti' )
+    'classname' => 'B86_s_product',
+    'description' => __( 'Slider with woocommerce products.', 'B86_s' )
   );
-  parent::__construct( 'ghumti_product', __( 'AT: Product Slider', 'ghumti' ), $widget_ops );
+  parent::__construct( 'B86_s_product', __( 'AT: Product Slider', 'B86_s' ), $widget_ops );
 }
 
 /**
@@ -29,46 +29,46 @@ public function __construct() {
 private function widget_fields() {
 
   $prod_type = array(
-    'latest_product' => __('Latest Product', 'ghumti'),
-    'category' => __('Category', 'ghumti'),
-    'upsell_product' => __('UpSell Product', 'ghumti'),
-    'feature_product' => __('Feature Product', 'ghumti'),
-    'on_sale' => __('On Sale Product', 'ghumti'),
+    'latest_product' => __('Latest Product', 'B86_s'),
+    'category' => __('Category', 'B86_s'),
+    'upsell_product' => __('UpSell Product', 'B86_s'),
+    'feature_product' => __('Feature Product', 'B86_s'),
+    'on_sale' => __('On Sale Product', 'B86_s'),
   );
 
   $fields = array(
     'product_title' => array(
-      'ghumti_widgets_name' => 'product_title',
-      'ghumti_widgets_title' => __('Title', 'ghumti'),
-      'ghumti_widgets_field_type' => 'text',
+      'B86_s_widgets_name' => 'product_title',
+      'B86_s_widgets_title' => __('Title', 'B86_s'),
+      'B86_s_widgets_field_type' => 'text',
 
     ),
     'product_type' => array(
-      'ghumti_widgets_name' => 'product_type',
-      'ghumti_widgets_title' => __('Select Product Type', 'ghumti'),
-      'ghumti_widgets_field_type' => 'select',
-      'ghumti_widgets_field_options' => $prod_type,
-      'ghumti_widgets_field_class' => 'ghumti-type-wrap',
+      'B86_s_widgets_name' => 'product_type',
+      'B86_s_widgets_title' => __('Select Product Type', 'B86_s'),
+      'B86_s_widgets_field_type' => 'select',
+      'B86_s_widgets_field_options' => $prod_type,
+      'B86_s_widgets_field_class' => 'B86_s-type-wrap',
     ),
     'product_category' => array(
-      'ghumti_widgets_name' => 'product_category',
-      'ghumti_widgets_title' => __('Select Product Category', 'ghumti'),
-      'ghumti_widgets_field_type' => 'select',
-      'ghumti_widgets_field_options' => ghumti_woocommerce_categories_lists(),
-      'ghumti_widgets_field_class' => 'ghumti-type-select',
+      'B86_s_widgets_name' => 'product_category',
+      'B86_s_widgets_title' => __('Select Product Category', 'B86_s'),
+      'B86_s_widgets_field_type' => 'select',
+      'B86_s_widgets_field_options' => B86_s_woocommerce_categories_lists(),
+      'B86_s_widgets_field_class' => 'B86_s-type-select',
     ),
     'product_number' => array(
-      'ghumti_widgets_name' => 'product_number',
-      'ghumti_widgets_title' => __('Select the number of Product to show', 'ghumti'),
-      'ghumti_widgets_default'      => '2',
-      'ghumti_widgets_field_type' => 'number',
+      'B86_s_widgets_name' => 'product_number',
+      'B86_s_widgets_title' => __('Select the number of Product to show', 'B86_s'),
+      'B86_s_widgets_default'      => '2',
+      'B86_s_widgets_field_type' => 'number',
     ),
     // 'product_size_type' => array(
-    //   'ghumti_widgets_name' => 'product_size_type',
-    //   'ghumti_widgets_title' => __('Product Slider Type', 'ghumti'),
-    //   'ghumti_widgets_field_type' => 'select',
-    //   'ghumti_widgets_field_options' => array('full-width'=>__('Full Width','ghumti'),
-    //     'half-width'=>__('With Sidebar Form on Right','ghumti'),                                                    
+    //   'B86_s_widgets_name' => 'product_size_type',
+    //   'B86_s_widgets_title' => __('Product Slider Type', 'B86_s'),
+    //   'B86_s_widgets_field_type' => 'select',
+    //   'B86_s_widgets_field_options' => array('full-width'=>__('Full Width','B86_s'),
+    //     'half-width'=>__('With Sidebar Form on Right','B86_s'),                                                    
     //   )
     // ),
   );
@@ -160,7 +160,7 @@ public function widget($args, $instance){
       ?>
       <div class="<?php echo 'prod-slider-'.esc_attr($product_size_type);?> clear">
         <div class="slider-<?php echo esc_attr($product_size_type);?>">
-          <ul class="owl-carousel ghumti-product-slider">
+          <ul class="owl-carousel B86_s-product-slider">
             <?php
             $count=0;
             $product_loop = new WP_Query( $product_args );
@@ -176,7 +176,7 @@ public function widget($args, $instance){
         </div>
         <?php
         // if($product_size_type=='half-width'){
-        //   echo do_shortcode(get_theme_mod('ghumti_form_shortcode'));
+        //   echo do_shortcode(get_theme_mod('B86_s_form_shortcode'));
         // }
         ?>
       </div>
@@ -194,7 +194,7 @@ public function widget($args, $instance){
 * @param	array	$new_instance	Values just sent to be saved.
 * @param	array	$old_instance	Previously saved values from database.
 *
-* @uses	ghumti_widgets_updated_field_value()		defined in widget-fields.php
+* @uses	B86_s_widgets_updated_field_value()		defined in widget-fields.php
 *
 * @return	array Updated safe values to be saved.
 */
@@ -204,7 +204,7 @@ public function update($new_instance, $old_instance) {
   $widget_fields = $this->widget_fields();
   foreach ($widget_fields as $widget_field) {
     extract($widget_field);
-    $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value($widget_field, $new_instance[$ghumti_widgets_name]);
+    $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value($widget_field, $new_instance[$B86_s_widgets_name]);
   }
 
   return $instance;
@@ -217,14 +217,14 @@ public function update($new_instance, $old_instance) {
 *
 * @param	array $instance Previously saved values from database.
 *
-* @uses	ghumti_widgets_show_widget_field()		defined in widget-fields.php
+* @uses	B86_s_widgets_show_widget_field()		defined in widget-fields.php
 */
 public function form($instance) {
   $widget_fields = $this->widget_fields();
   foreach ($widget_fields as $widget_field) {
     extract($widget_field);
-    $ghumti_widgets_field_value = !empty($instance[$ghumti_widgets_name]) ? esc_attr($instance[$ghumti_widgets_name]) : '';
-    ghumti_widgets_show_widget_field($this, $widget_field, $ghumti_widgets_field_value);
+    $B86_s_widgets_field_value = !empty($instance[$B86_s_widgets_name]) ? esc_attr($instance[$B86_s_widgets_name]) : '';
+    B86_s_widgets_show_widget_field($this, $widget_field, $B86_s_widgets_field_value);
   }
 }
 }

@@ -5,11 +5,11 @@
  * Widget show the woocommerce category and products of it.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_cat_product extends WP_Widget {
+class B86_s_cat_product extends WP_Widget {
   /**
   * Register Widget with Wordpress
   * 
@@ -17,10 +17,10 @@ class ghumti_cat_product extends WP_Widget {
   public function __construct() {
 
     $widget_ops = array( 
-      'classname' => 'ghumti_cat_product',
-      'description' => __( 'This widgets show the Category Image,Description and Product of that Category.', 'ghumti' )
+      'classname' => 'B86_s_cat_product',
+      'description' => __( 'This widgets show the Category Image,Description and Product of that Category.', 'B86_s' )
     );
-    parent::__construct( 'ghumti_cat_product', __( 'AT: Category & Product', 'ghumti' ), $widget_ops );
+    parent::__construct( 'B86_s_cat_product', __( 'AT: Category & Product', 'B86_s' ), $widget_ops );
   }
 
   /**
@@ -30,29 +30,29 @@ class ghumti_cat_product extends WP_Widget {
   private function widget_fields() {
 
     $prod_type = array(
-      'right_align' => __('Right Align With Category Image', 'ghumti'),
-      'left_align' => __('Left Align With Category Image', 'ghumti'),
+      'right_align' => __('Right Align With Category Image', 'B86_s'),
+      'left_align' => __('Left Align With Category Image', 'B86_s'),
     );
     
 
     $fields = array(
       'cat_product_title' => array(
-        'ghumti_widgets_name' => 'cat_product_title',
-        'ghumti_widgets_title' => __('Title', 'ghumti'),
-        'ghumti_widgets_field_type' => 'text',
+        'B86_s_widgets_name' => 'cat_product_title',
+        'B86_s_widgets_title' => __('Title', 'B86_s'),
+        'B86_s_widgets_field_type' => 'text',
       ),
       'cat_product_alignment' => array(
-        'ghumti_widgets_name' => 'cat_product_alignment',
-        'ghumti_widgets_title' => __('Select the Display Style (Image Alignment)', 'ghumti'),
-        'ghumti_widgets_field_type' => 'select',
-        'ghumti_widgets_field_options' => $prod_type
+        'B86_s_widgets_name' => 'cat_product_alignment',
+        'B86_s_widgets_title' => __('Select the Display Style (Image Alignment)', 'B86_s'),
+        'B86_s_widgets_field_type' => 'select',
+        'B86_s_widgets_field_options' => $prod_type
 
       ),
       'cat_product_category' => array(
-        'ghumti_widgets_name' => 'cat_product_category',
-        'ghumti_widgets_title' => __('Select Product Category', 'ghumti'),
-        'ghumti_widgets_field_type' => 'select',
-        'ghumti_widgets_field_options' => ghumti_woocommerce_categories_lists()
+        'B86_s_widgets_name' => 'cat_product_category',
+        'B86_s_widgets_title' => __('Select Product Category', 'B86_s'),
+        'B86_s_widgets_field_type' => 'select',
+        'B86_s_widgets_field_options' => B86_s_woocommerce_categories_lists()
 
       ),
 
@@ -88,12 +88,12 @@ class ghumti_cat_product extends WP_Widget {
                   <?php 
                   $thumbnail_id = get_woocommerce_term_meta($cat_product_category, 'thumbnail_id', true);
                   if (!empty($thumbnail_id)) {
-                    $image = wp_get_attachment_image_src($thumbnail_id, 'ghumti-cat-square');
+                    $image = wp_get_attachment_image_src($thumbnail_id, 'B86_s-cat-square');
                     echo '<img src="' . esc_url($image[0]) . '" alt=""  />';
                   }
                   else{ 
                     ?>
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/img388x388.png';?>" alt="<?php esc_html_e('No Image','ghumti')?>"/>
+                    <img src="<?php echo get_template_directory_uri().'/assets/images/img388x388.png';?>" alt="<?php esc_html_e('No Image','B86_s')?>"/>
                     <?php 
                   } ?>
                 </a>
@@ -113,7 +113,7 @@ class ghumti_cat_product extends WP_Widget {
                   </div>  
                 </div>
               </div>
-              <ul class="ghumti-catproduct owl-carousel">
+              <ul class="B86_s-catproduct owl-carousel">
                 <?php 
                 $prod_args = array(
                   'post_type' => 'product',
@@ -154,7 +154,7 @@ class ghumti_cat_product extends WP_Widget {
     * @param  array $new_instance Values just sent to be saved.
     * @param  array $old_instance Previously saved values from database.
     *
-    * @uses ghumti_widgets_updated_field_value()    defined in widget-fields.php
+    * @uses B86_s_widgets_updated_field_value()    defined in widget-fields.php
     *
     * @return array Updated safe values to be saved.
     */
@@ -169,7 +169,7 @@ class ghumti_cat_product extends WP_Widget {
         extract($widget_field);
 
         // Use helper function to get updated field values
-        $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value($widget_field, $new_instance[$ghumti_widgets_name]);
+        $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value($widget_field, $new_instance[$B86_s_widgets_name]);
       }
 
       return $instance;
@@ -182,7 +182,7 @@ class ghumti_cat_product extends WP_Widget {
     *
     * @param  array $instance Previously saved values from database.
     *
-    * @uses ghumti_widgets_show_widget_field()    defined in widget-fields.php
+    * @uses B86_s_widgets_show_widget_field()    defined in widget-fields.php
     */
     public function form($instance) {
       $widget_fields = $this->widget_fields();
@@ -192,8 +192,8 @@ class ghumti_cat_product extends WP_Widget {
 
         // Make array elements available as variables
         extract($widget_field);
-        $ghumti_widgets_field_value = !empty($instance[$ghumti_widgets_name]) ? esc_attr($instance[$ghumti_widgets_name]) : '';
-        ghumti_widgets_show_widget_field($this, $widget_field, $ghumti_widgets_field_value);
+        $B86_s_widgets_field_value = !empty($instance[$B86_s_widgets_name]) ? esc_attr($instance[$B86_s_widgets_name]) : '';
+        B86_s_widgets_show_widget_field($this, $widget_field, $B86_s_widgets_field_value);
       }
     }
   }

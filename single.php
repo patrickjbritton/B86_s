@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -22,16 +22,16 @@ get_header(); ?>
 			the_post_navigation();
 
 			/**
-		     * ghumti_related_posts hook
+		     * B86_s_related_posts hook
 		     *
-		     * @hooked - ghumti_related_posts_start - 5
-		     * @hooked - ghumti_related_posts_section - 10
-		     * @hooked - ghumti_related_posts_end - 15
+		     * @hooked - B86_s_related_posts_start - 5
+		     * @hooked - B86_s_related_posts_section - 10
+		     * @hooked - B86_s_related_posts_end - 15
 		     *
 		     * @since 1.0.0
 		     */
 			
-			do_action( 'ghumti_related_posts' );
+			do_action( 'B86_s_related_posts' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -45,5 +45,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-ghumti_get_sidebar();
+B86_s_get_sidebar();
 get_footer();

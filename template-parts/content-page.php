@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -13,11 +13,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if( has_post_thumbnail() ) { ?>
-		<div class="ghumti-article-thumb">
+		<div class="B86_s-article-thumb">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'full' ); ?>
 			</a>
-		</div><!-- .ghumti-article-thumb -->
+		</div><!-- .B86_s-article-thumb -->
 	<?php } ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -28,7 +28,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ghumti' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'B86_s' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -41,7 +41,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'ghumti' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'B86_s' ),
 							array(
 								'span' => array(
 									'class' => array(),

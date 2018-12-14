@@ -63,8 +63,8 @@ jQuery(document).ready(function($) {
     /**
      * Image upload at widget
      */
-     upload_media_image('.ghumti-upload-button');
-     delete_media_image('.ghumti-delete-button');
+     upload_media_image('.B86_s-upload-button');
+     delete_media_image('.B86_s-delete-button');
 
      $('body').on('click','.selector-labels label', function(){
         var $this = $(this);
@@ -78,35 +78,35 @@ jQuery(document).ready(function($) {
      * Radio Image control in metabox
      * Use buttonset() for radio images.
      */
-     $( '.ghumti-meta-options-wrap .buttonset' ).buttonset();
+     $( '.B86_s-meta-options-wrap .buttonset' ).buttonset();
 
     /**
      * Meta tabs and its content
      */
-     var curTab = $('.ghumti-meta-menu-wrapper li.active').data('tab');
-     $('.ghumti-metabox-content-wrapper').find('#'+curTab).show();
+     var curTab = $('.B86_s-meta-menu-wrapper li.active').data('tab');
+     $('.B86_s-metabox-content-wrapper').find('#'+curTab).show();
 
-     $('ul.ghumti-meta-menu-wrapper li').click(function (){
+     $('ul.B86_s-meta-menu-wrapper li').click(function (){
         var id = $(this).data('tab');
 
-        $('ul.ghumti-meta-menu-wrapper li').removeClass('active');
+        $('ul.B86_s-meta-menu-wrapper li').removeClass('active');
         $(this).addClass('active')
 
-        $('.ghumti-metabox-content-wrapper .ghumti-single-meta').hide();
+        $('.B86_s-metabox-content-wrapper .B86_s-single-meta').hide();
         $('#'+id).fadeIn();
         $('#post-meta-selected').val(id);
     });
-    if($('.widget-liquid-right .ghumti-type-wrap select').val()!='category'){
-        $('.ghumti-type-select').removeClass('category');
+    if($('.widget-liquid-right .B86_s-type-wrap select').val()!='category'){
+        $('.B86_s-type-select').removeClass('category');
     }else{
-        $('.ghumti-type-select').addClass('category');
+        $('.B86_s-type-select').addClass('category');
     }
-    $('body').on('change','.ghumti-type-wrap select',function(){
-        var ghumtiSel = $(this).val();
-        if(ghumtiSel=='category'){
-            $('.ghumti-type-select').addClass('category');
+    $('body').on('change','.B86_s-type-wrap select',function(){
+        var B86_sSel = $(this).val();
+        if(B86_sSel=='category'){
+            $('.B86_s-type-select').addClass('category');
         }else{
-            $('.ghumti-type-select').removeClass('category');
+            $('.B86_s-type-select').removeClass('category');
         }
     });
 });

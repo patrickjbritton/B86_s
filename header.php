@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -25,62 +25,62 @@
 
 	<?php
 		/**
-	     * ghumti_before_page hook
+	     * B86_s_before_page hook
 	     *
 	     * @since 1.0.0
 	     */
-		do_action( 'ghumti_before_page' );
+		do_action( 'B86_s_before_page' );
 		?>
 
 		<div id="page" class="site">
 			<?php 
-			$ghumti_top_header_option = get_theme_mod( 'ghumti_top_header_option', 'show' );
-			if( $ghumti_top_header_option == 'show' ) {
+			$B86_s_top_header_option = get_theme_mod( 'B86_s_top_header_option', 'show' );
+			if( $B86_s_top_header_option == 'show' ) {
 
 				/**
-			     * ghumti_top_header hook
+			     * B86_s_top_header hook
 			     *
-			     * @hooked - ghumti_top_header_start - 5
-			     * @hooked - ghumti_top_left_section - 10
-			     * @hooked - ghumti_top_right_section - 15
-			     * @hooked - ghumti_featured_post_toggle - 20
-			     * @hooked - ghumti_top_header_end - 25
+			     * @hooked - B86_s_top_header_start - 5
+			     * @hooked - B86_s_top_left_section - 10
+			     * @hooked - B86_s_top_right_section - 15
+			     * @hooked - B86_s_featured_post_toggle - 20
+			     * @hooked - B86_s_top_header_end - 25
 			     *
 			     * @since 1.0.0
 			     */
-				do_action( 'ghumti_top_header' );
-				$ghumti_ticker_option = get_theme_mod( 'ghumti_ticker_option', 'show' );
-				if( $ghumti_ticker_option == 'show' ) {
+				do_action( 'B86_s_top_header' );
+				$B86_s_ticker_option = get_theme_mod( 'B86_s_ticker_option', 'show' );
+				if( $B86_s_ticker_option == 'show' ) {
 
 					/**
-				     * ghumti_top_header hook
+				     * B86_s_top_header hook
 				     *
-				     * @hooked - ghumti_ticker_section_start - 5
-				     * @hooked - ghumti_ticker_content - 10
-				     * @hooked - ghumti_ticker_section_end - 15
+				     * @hooked - B86_s_ticker_section_start - 5
+				     * @hooked - B86_s_ticker_content - 10
+				     * @hooked - B86_s_ticker_section_end - 15
 				     *
 				     * @since 1.0.0
 				     */
-					do_action( 'ghumti_ticker_section' );
+					do_action( 'B86_s_ticker_section' );
 				}
 			}
 			?>
 
 			<?php 	
 			/**
-		     * ghumti_header_section hook
+		     * B86_s_header_section hook
 		     *
-		     * @hooked - ghumti_header_section_start - 5
-		     * @hooked - ghumti_header_logo_ads_section_start - 10
-		     * @hooked - ghumti_site_branding_section - 15
-		     * @hooked - ghumti_header_ads_section - 20
-		     * @hooked - ghumti_header_logo_ads_section_end - 25
-		     * @hooked - ghumti_primary_menu_section - 30
-		     * @hooked - ghumti_header_section_end - 35
+		     * @hooked - B86_s_header_section_start - 5
+		     * @hooked - B86_s_header_logo_ads_section_start - 10
+		     * @hooked - B86_s_site_branding_section - 15
+		     * @hooked - B86_s_header_ads_section - 20
+		     * @hooked - B86_s_header_logo_ads_section_end - 25
+		     * @hooked - B86_s_primary_menu_section - 30
+		     * @hooked - B86_s_header_section_end - 35
 		     *
 		     * @since 1.0.0
 		     */
-			do_action( 'ghumti_header_section' );
+			do_action( 'B86_s_header_section' );
 			?>
 
 			<div id="content" class="site-content">

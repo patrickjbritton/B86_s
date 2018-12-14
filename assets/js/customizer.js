@@ -9,7 +9,7 @@
 ( function( $ ) {
 
 	// Header text color.
-	wp.customize( 'ghumti_site_title_color', function( value ) {
+	wp.customize( 'B86_s_site_title_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a, .site-description' ).css( {
 				'color': to

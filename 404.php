@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -16,11 +16,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ghumti' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'B86_s' ); ?></h1>
 				</header><!-- .page-header -->
-				<div class="error-num"> <?php esc_html_e( '404', 'ghumti' ); ?> <span><?php esc_html_e( 'error', 'ghumti' );?></span> </div>
+				<div class="error-num"> <?php esc_html_e( '404', 'B86_s' ); ?> <span><?php esc_html_e( 'error', 'B86_s' );?></span> </div>
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'ghumti' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'B86_s' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

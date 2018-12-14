@@ -5,21 +5,21 @@
  * Widget show the social media icons.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_Social_Media extends WP_widget {
+class B86_s_Social_Media extends WP_widget {
 
 	/**
      * Register widget with WordPress.
      */
     public function __construct() {
         $widget_ops = array( 
-            'classname' => 'ghumti_social_media',
-            'description' => __( 'A widget shows the social media icons. Add Social Icons from Customizer > Header Settings > Social Icons', 'ghumti' )
+            'classname' => 'B86_s_social_media',
+            'description' => __( 'A widget shows the social media icons. Add Social Icons from Customizer > Header Settings > Social Icons', 'B86_s' )
         );
-        parent::__construct( 'ghumti_social_media', __( 'AT: Social Media', 'ghumti' ), $widget_ops );
+        parent::__construct( 'B86_s_social_media', __( 'AT: Social Media', 'B86_s' ), $widget_ops );
     }
 
     /**
@@ -31,9 +31,9 @@ class ghumti_Social_Media extends WP_widget {
         $fields = array(
 
             'widget_title' => array(
-                'ghumti_widgets_name'         => 'widget_title',
-                'ghumti_widgets_title'        => __( 'Widget title', 'ghumti' ),
-                'ghumti_widgets_field_type'   => 'text'
+                'B86_s_widgets_name'         => 'widget_title',
+                'B86_s_widgets_title'        => __( 'Widget title', 'B86_s' ),
+                'B86_s_widgets_field_type'   => 'text'
             )
         );
         return $fields;
@@ -53,20 +53,20 @@ class ghumti_Social_Media extends WP_widget {
             return ;
         }
 
-        $ghumti_widget_title  = empty( $instance['widget_title'] ) ? '' : $instance['widget_title'];
+        $B86_s_widget_title  = empty( $instance['widget_title'] ) ? '' : $instance['widget_title'];
 
         $get_social_media_icons = get_theme_mod( 'social_media_icons', '' );
         $get_decode_social_media = json_decode( $get_social_media_icons );
 
         echo wp_kses_post($before_widget);
     ?>
-            <div class="ghumti-aside-social-wrapper">
+            <div class="B86_s-aside-social-wrapper">
                 <?php
-                    if( ! empty( $ghumti_widget_title ) ) {
-                        echo wp_kses_post($before_title) . esc_html( $ghumti_widget_title ) . wp_kses_post($after_title);
+                    if( ! empty( $B86_s_widget_title ) ) {
+                        echo wp_kses_post($before_title) . esc_html( $B86_s_widget_title ) . wp_kses_post($after_title);
                     }
                 ?>
-                <div class="ghumti-social-icons-wrapper">
+                <div class="B86_s-social-icons-wrapper">
                     <?php
                         if( !empty( $get_decode_social_media ) ) {
                             foreach ( $get_decode_social_media as $single_icon ) {
@@ -78,8 +78,8 @@ class ghumti_Social_Media extends WP_widget {
                             }
                         }
                     ?>
-                </div><!-- .ghumti-social-icons-wrapper -->
-            </div><!-- .ghumti-aside-social-wrapper -->
+                </div><!-- .B86_s-social-icons-wrapper -->
+            </div><!-- .B86_s-aside-social-wrapper -->
     <?php
         echo wp_kses_post($after_widget);
     }
@@ -92,7 +92,7 @@ class ghumti_Social_Media extends WP_widget {
      * @param   array   $new_instance   Values just sent to be saved.
      * @param   array   $old_instance   Previously saved values from database.
      *
-     * @uses    ghumti_widgets_updated_field_value()     defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_updated_field_value()     defined in B86_s-widget-fields.php
      *
      * @return  array Updated safe values to be saved.
      */
@@ -107,7 +107,7 @@ class ghumti_Social_Media extends WP_widget {
             extract( $widget_field );
 
             // Use helper function to get updated field values
-            $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value( $widget_field, $new_instance[$ghumti_widgets_name] );
+            $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value( $widget_field, $new_instance[$B86_s_widgets_name] );
         }
 
         return $instance;
@@ -120,7 +120,7 @@ class ghumti_Social_Media extends WP_widget {
      *
      * @param   array $instance Previously saved values from database.
      *
-     * @uses    ghumti_widgets_show_widget_field()       defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_show_widget_field()       defined in B86_s-widget-fields.php
      */
     public function form( $instance ) {
         $widget_fields = $this->widget_fields();
@@ -130,8 +130,8 @@ class ghumti_Social_Media extends WP_widget {
 
             // Make array elements available as variables
             extract( $widget_field );
-            $ghumti_widgets_field_value = !empty( $instance[$ghumti_widgets_name] ) ? wp_kses_post( $instance[$ghumti_widgets_name] ) : '';
-            ghumti_widgets_show_widget_field( $this, $widget_field, $ghumti_widgets_field_value );
+            $B86_s_widgets_field_value = !empty( $instance[$B86_s_widgets_name] ) ? wp_kses_post( $instance[$B86_s_widgets_name] ) : '';
+            B86_s_widgets_show_widget_field( $this, $widget_field, $B86_s_widgets_field_value );
         }
     }
 }

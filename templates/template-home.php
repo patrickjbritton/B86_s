@@ -5,7 +5,7 @@
  * This is the template that displays all widgets included in homepage widget area.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -17,11 +17,11 @@ get_header();
  * 
  * @since 1.0.0
  */
-if ( is_active_sidebar( 'ghumti_home_middle_section_area' ) ) {
+if ( is_active_sidebar( 'B86_s_home_middle_section_area' ) ) {
 	?>
-	<div class="ghumti-home-middle-section ghumti-clearfix">
-		<?php dynamic_sidebar( 'ghumti_home_middle_section_area' ); ?>
-	</div><!-- .ghumti-home-middle-section -->
+	<div class="B86_s-home-middle-section B86_s-clearfix">
+		<?php dynamic_sidebar( 'B86_s_home_middle_section_area' ); ?>
+	</div><!-- .B86_s-home-middle-section -->
 	<?php 
 }
 

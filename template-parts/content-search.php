@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -20,19 +20,19 @@ if( has_post_thumbnail() ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
 
     <?php if( has_post_thumbnail() ) { ?>
-        <div class="ghumti-article-thumb">
+        <div class="B86_s-article-thumb">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'ghumti-slider' ); ?>
+                <?php the_post_thumbnail( 'B86_s-slider' ); ?>
             </a>
-        </div><!-- .ghumti-article-thumb -->
+        </div><!-- .B86_s-article-thumb -->
     <?php } ?>
-    <div class="ghumti-archive-post-content-wrapper">
+    <div class="B86_s-archive-post-content-wrapper">
     	<header class="entry-header">
     		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
     
     		<?php if ( 'post' === get_post_type() ) : ?>
     		<div class="entry-meta">
-    			<?php ghumti_posted_on(); ?>
+    			<?php B86_s_posted_on(); ?>
     		</div><!-- .entry-meta -->
     		<?php endif; ?>
     	</header><!-- .entry-header -->
@@ -42,7 +42,7 @@ if( has_post_thumbnail() ) {
     	</div><!-- .entry-summary -->
     
     	<footer class="entry-footer">
-    		<?php ghumti_entry_footer(); ?>
+    		<?php B86_s_entry_footer(); ?>
     	</footer><!-- .entry-footer -->
-     </div><!-- .ghumti-archive-post-content-wrapper -->
+     </div><!-- .B86_s-archive-post-content-wrapper -->
 </article><!-- #post-<?php the_ID(); ?> -->

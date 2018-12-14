@@ -5,42 +5,42 @@
  * Widget show the woocommerce products.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
-class ghumti_special_product extends WP_Widget {
+class B86_s_special_product extends WP_Widget {
     /**
      * Register Widget with Wordpress
      * 
      */
     public function __construct() {
     	$widget_ops = array( 
-    		'classname' => 'ghumti_special_product',
-    		'description' => __( 'Display Special Offer Product with date.', 'ghumti' )
+    		'classname' => 'B86_s_special_product',
+    		'description' => __( 'Display Special Offer Product with date.', 'B86_s' )
     	);
-    	parent::__construct( 'ghumti_special_product', __( 'AT: OnSale Product', 'ghumti' ), $widget_ops );
+    	parent::__construct( 'B86_s_special_product', __( 'AT: OnSale Product', 'B86_s' ), $widget_ops );
     }
 
     private function widget_fields() {      
-     $ghumti_woocommerce_categories_lists = ghumti_woocommerce_categories_lists();
+     $B86_s_woocommerce_categories_lists = B86_s_woocommerce_categories_lists();
 
      $fields = array(
        'product_title' => array(
-        'ghumti_widgets_name' => 'product_title',
-        'ghumti_widgets_title' => __('Title', 'ghumti'),
-        'ghumti_widgets_field_type' => 'text',
+        'B86_s_widgets_name' => 'product_title',
+        'B86_s_widgets_title' => __('Title', 'B86_s'),
+        'B86_s_widgets_field_type' => 'text',
       ),
        'special_multicheckboxed_category' => array(
-        'ghumti_widgets_name' => 'special_multicheckboxed_category',
-        'ghumti_widgets_title' => __('Select Category For Special Deals', 'ghumti'),
-        'ghumti_widgets_field_type' => 'multicheckboxes',
-        'ghumti_widgets_field_options' => $ghumti_woocommerce_categories_lists
+        'B86_s_widgets_name' => 'special_multicheckboxed_category',
+        'B86_s_widgets_title' => __('Select Category For Special Deals', 'B86_s'),
+        'B86_s_widgets_field_type' => 'multicheckboxes',
+        'B86_s_widgets_field_options' => $B86_s_woocommerce_categories_lists
       ),         
        'product_number' => array(
-        'ghumti_widgets_name' => 'product_number',
-        'ghumti_widgets_title' => __('Display the Number of Deals Product show', 'ghumti'),
-        'ghumti_widgets_default' => '1',
-        'ghumti_widgets_field_type' => 'number',
+        'B86_s_widgets_name' => 'product_number',
+        'B86_s_widgets_title' => __('Display the Number of Deals Product show', 'B86_s'),
+        'B86_s_widgets_default' => '1',
+        'B86_s_widgets_field_type' => 'number',
       ));
      return $fields;
    }
@@ -85,13 +85,13 @@ class ghumti_special_product extends WP_Widget {
     );
     ?>
     <?php echo wp_kses_post($before_widget); ?>
-    <div class="ghumti-special-product">      
+    <div class="B86_s-special-product">      
       <?php 
       if( !empty( $product_title ) ) {
        echo wp_kses_post($before_title) . esc_html( $product_title ) . wp_kses_post($after_title);
      }
      ?>
-     <ul class="ghumti-sale-slide owl-carousel">
+     <ul class="B86_s-sale-slide owl-carousel">
        <?php
        $count = 0;
        $product_loop = new WP_Query( $product_args );
@@ -135,12 +135,12 @@ class ghumti_special_product extends WP_Widget {
             if(!empty($price_sale)) :
               ?>
               <div class="fl-pcountdown-cnt" style="color:red;">          
-               <span class="countdown_title"><?php esc_html_e('This limited offer ends in:','ghumti');?></span>
+               <span class="countdown_title"><?php esc_html_e('This limited offer ends in:','B86_s');?></span>
                <ul class="fl-style1 fl-medium fl-countdown fl-countdown-pub countdown_<?php echo esc_attr($product_id); ?>">
-                <li><span class="days">00</span><p class="days_text"><?php esc_html_e('Days','ghumti');?></p></li>
-                <li><span class="hours">00</span><p class="hours_text"><?php esc_html_e('Hours','ghumti');?></p></li>
-                <li><span class="minutes">00</span><p class="minutes_text"><?php esc_html_e('Minutes','ghumti');?></p></li>
-                <li><span class="seconds">00</span><p class="seconds_text"><?php esc_html_e('Seconds','ghumti');?></p></li>
+                <li><span class="days">00</span><p class="days_text"><?php esc_html_e('Days','B86_s');?></p></li>
+                <li><span class="hours">00</span><p class="hours_text"><?php esc_html_e('Hours','B86_s');?></p></li>
+                <li><span class="minutes">00</span><p class="minutes_text"><?php esc_html_e('Minutes','B86_s');?></p></li>
+                <li><span class="seconds">00</span><p class="seconds_text"><?php esc_html_e('Seconds','B86_s');?></p></li>
               </ul>
             </div>
             <script type="text/javascript">
@@ -148,8 +148,8 @@ class ghumti_special_product extends WP_Widget {
               jQuery(".countdown_<?php echo esc_attr($product_id); ?>").countdown({
                date: "<?php echo esc_attr($new_date); ?>",
                offset: -8,
-               day: "<?php esc_html_e('Day','ghumti');?>",
-               days: "<?php esc_html_e('Days','ghumti');?>"
+               day: "<?php esc_html_e('Day','B86_s');?>",
+               days: "<?php esc_html_e('Days','B86_s');?>"
              }, function () {
              });
             });
@@ -173,7 +173,7 @@ public function update($new_instance, $old_instance) {
  $widget_fields = $this->widget_fields();
  foreach ($widget_fields as $widget_field) {
   extract($widget_field);
-  $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value($widget_field, $new_instance[$ghumti_widgets_name]);
+  $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value($widget_field, $new_instance[$B86_s_widgets_name]);
 }
 return $instance;
 }
@@ -182,8 +182,8 @@ public function form($instance) {
  $widget_fields = $this->widget_fields();
  foreach ($widget_fields as $widget_field) {
   extract($widget_field);
-  $ghumti_widgets_field_value = !empty($instance[$ghumti_widgets_name]) ? $instance[$ghumti_widgets_name] : '';
-  ghumti_widgets_show_widget_field($this, $widget_field, $ghumti_widgets_field_value);
+  $B86_s_widgets_field_value = !empty($instance[$B86_s_widgets_name]) ? $instance[$B86_s_widgets_name] : '';
+  B86_s_widgets_show_widget_field($this, $widget_field, $B86_s_widgets_field_value);
 }
 }
 }

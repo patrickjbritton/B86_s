@@ -3,7 +3,7 @@
  * Define customizer custom classes
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -15,7 +15,7 @@ if( class_exists( 'WP_Customize_Control' ) ) {
      * @since 1.0.0
      * @access public
      */
-    class ghumti_Customize_Switch_Control extends WP_Customize_Control {
+    class B86_s_Customize_Switch_Control extends WP_Customize_Control {
 
         /**
          * The type of customize control being rendered.
@@ -50,13 +50,13 @@ if( class_exists( 'WP_Customize_Control' ) ) {
             </label>
     <?php
         }
-    } // end ghumti_Customize_Switch_Control
+    } // end B86_s_Customize_Switch_Control
 
 /*--------------------------------------------------------------------------------------------------------------*/
     /**
      * Customize for multiple checkboxes
      */
-    class ghumti_Customize_Multiple_Checkboxes_Control extends WP_Customize_Control {
+    class B86_s_Customize_Multiple_Checkboxes_Control extends WP_Customize_Control {
         /**
          * The type of customize control being rendered.
          *
@@ -104,7 +104,7 @@ if( class_exists( 'WP_Customize_Control' ) ) {
             <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( implode( ',', $multi_values ) ); ?>" />
     <?php
         }
-    }// end ghumti_Customize_Multiple_Checkboxes_Control
+    }// end B86_s_Customize_Multiple_Checkboxes_Control
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
     /**
@@ -113,7 +113,7 @@ if( class_exists( 'WP_Customize_Control' ) ) {
      * @since  1.0.0
      * @access public
      */
-    class ghumti_Customize_Control_Radio_Image extends WP_Customize_Control {
+    class B86_s_Customize_Control_Radio_Image extends WP_Customize_Control {
         /**
          * The type of customize control being rendered.
          *
@@ -186,14 +186,14 @@ if( class_exists( 'WP_Customize_Control' ) ) {
 
             </div><!-- .buttonset -->
         <?php }
-    } // end ghumti_Customize_Control_Radio_Image
+    } // end B86_s_Customize_Control_Radio_Image
 /*-----------------------------------------------------------------------------------------------------------------------*/
     /**
      * Customize controls for repeater field
      *
      * @since 1.0.0
      */
-    class ghumti_Repeater_Controler extends WP_Customize_Control {
+    class B86_s_Repeater_Controler extends WP_Customize_Control {
         /**
          * The control type.
          *
@@ -202,9 +202,9 @@ if( class_exists( 'WP_Customize_Control' ) ) {
          */
         public $type = 'repeater';
 
-        public $ghumti_box_label = '';
+        public $B86_s_box_label = '';
 
-        public $ghumti_box_add_control = '';
+        public $B86_s_box_add_control = '';
 
         /**
          * The fields that each container row will contain.
@@ -221,8 +221,8 @@ if( class_exists( 'WP_Customize_Control' ) ) {
          */
         public function __construct( $manager, $id, $args = array(), $fields = array() ) {
             $this->fields = $fields;
-            $this->ghumti_box_label = $args['ghumti_box_label'] ;
-            $this->ghumti_box_add_control = $args['ghumti_box_add_control'];
+            $this->B86_s_box_label = $args['B86_s_box_label'] ;
+            $this->B86_s_box_add_control = $args['B86_s_box_add_control'];
             parent::__construct( $manager, $id, $args );
         }
 
@@ -240,33 +240,33 @@ if( class_exists( 'WP_Customize_Control' ) ) {
                 </span>
             <?php } ?>
 
-            <ul class="ghumti-repeater-field-control-wrap">
-                <?php $this->ghumti_get_fields(); ?>
+            <ul class="B86_s-repeater-field-control-wrap">
+                <?php $this->B86_s_get_fields(); ?>
             </ul>
 
-            <input type="hidden" <?php esc_attr( $this->link() ); ?> class="ghumti-repeater-collector" value="<?php echo esc_attr( $this->value() ); ?>" />
+            <input type="hidden" <?php esc_attr( $this->link() ); ?> class="B86_s-repeater-collector" value="<?php echo esc_attr( $this->value() ); ?>" />
             <input type="hidden" name="<?php echo esc_attr( $repeater_id ).'_count'; ?>" class="field-count" value="<?php echo absint( $field_count ); ?>">
             <input type="hidden" name="field_limit" class="field-limit" value="5">
-            <button type="button" class="button ghumti-repeater-add-control-field"><?php echo esc_html( $this->ghumti_box_add_control ); ?></button>
+            <button type="button" class="button B86_s-repeater-add-control-field"><?php echo esc_html( $this->B86_s_box_add_control ); ?></button>
     <?php
         }
 
-        private function ghumti_get_fields(){
+        private function B86_s_get_fields(){
             $fields = $this->fields;
             $values = json_decode( $this->value() );
 
             if( is_array( $values ) ){
             foreach( $values as $value ){
         ?>
-            <li class="ghumti-repeater-field-control">
-            <h3 class="ghumti-repeater-field-title"><?php echo esc_html( $this->ghumti_box_label ); ?></h3>
+            <li class="B86_s-repeater-field-control">
+            <h3 class="B86_s-repeater-field-title"><?php echo esc_html( $this->B86_s_box_label ); ?></h3>
             
-            <div class="ghumti-repeater-fields">
+            <div class="B86_s-repeater-fields">
             <?php
                 foreach ( $fields as $key => $field ) {
                 $class = isset( $field['class'] ) ? $field['class'] : '';
             ?>
-                <div class="ghumti-repeater-field ghumti-repeater-type-<?php echo esc_attr( $field['type'] ).' '.esc_attr($class); ?>">
+                <div class="B86_s-repeater-field B86_s-repeater-type-<?php echo esc_attr( $field['type'] ).' '.esc_attr($class); ?>">
 
                 <?php 
                     $label = isset( $field['label'] ) ? $field['label'] : '';
@@ -291,11 +291,11 @@ if( class_exists( 'WP_Customize_Control' ) ) {
                             break;
 
                         case 'social_icon':
-                            echo '<div class="ghumti-repeater-selected-icon"><i class="'.esc_attr( $new_value ).'"></i><span><i class="fa fa-angle-down"></i></span></div><ul class="ghumti-repeater-icon-list ghumti-clearfix">';
-                            $ghumti_font_awesome_social_icon_array = ghumti_font_awesome_social_icon_array();
-                            foreach ( $ghumti_font_awesome_social_icon_array as $ghumti_font_awesome_icon ) {
-                                $icon_class = $new_value == $ghumti_font_awesome_icon ? 'icon-active' : '';
-                                echo '<li class='. esc_attr( $icon_class ) .'><i class="'. esc_attr( $ghumti_font_awesome_icon ) .'"></i></li>';
+                            echo '<div class="B86_s-repeater-selected-icon"><i class="'.esc_attr( $new_value ).'"></i><span><i class="fa fa-angle-down"></i></span></div><ul class="B86_s-repeater-icon-list B86_s-clearfix">';
+                            $B86_s_font_awesome_social_icon_array = B86_s_font_awesome_social_icon_array();
+                            foreach ( $B86_s_font_awesome_social_icon_array as $B86_s_font_awesome_icon ) {
+                                $icon_class = $new_value == $B86_s_font_awesome_icon ? 'icon-active' : '';
+                                echo '<li class='. esc_attr( $icon_class ) .'><i class="'. esc_attr( $B86_s_font_awesome_icon ) .'"></i></li>';
                             }
                             echo '</ul><input data-default="'. esc_attr( $default ) .'" type="hidden" value="'. esc_attr( $new_value ) .'" data-name="'.esc_attr( $key ).'"/>';
                             break;
@@ -308,10 +308,10 @@ if( class_exists( 'WP_Customize_Control' ) ) {
                 <?php
                 } ?>
 
-                <div class="ghumti-clearfix ghumti-repeater-footer">
+                <div class="B86_s-clearfix B86_s-repeater-footer">
                     <div class="alignright">
-                    <a class="ghumti-repeater-field-remove" href="#remove"><?php esc_html_e( 'Delete', 'ghumti' ) ?></a> |
-                    <a class="ghumti-repeater-field-close" href="#close"><?php esc_html_e( 'Close', 'ghumti' ) ?></a>
+                    <a class="B86_s-repeater-field-remove" href="#remove"><?php esc_html_e( 'Delete', 'B86_s' ) ?></a> |
+                    <a class="B86_s-repeater-field-close" href="#close"><?php esc_html_e( 'Close', 'B86_s' ) ?></a>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@ if( class_exists( 'WP_Customize_Control' ) ) {
             }
             }
         }
-    } // end ghumti_Repeater_Controler
+    } // end B86_s_Repeater_Controler
 /*-----------------------------------------------------------------------------------------------------------------------*/
     
     /**
@@ -329,7 +329,7 @@ if( class_exists( 'WP_Customize_Control' ) ) {
      * @since  1.0.6
      * @access public
      */
-    class ghumti_Customize_Section_Upsell extends WP_Customize_Section {
+    class B86_s_Customize_Section_Upsell extends WP_Customize_Section {
 
         /**
          * The type of customize section being rendered.
@@ -393,6 +393,6 @@ if( class_exists( 'WP_Customize_Control' ) ) {
                 </h3>
             </li>
         <?php }
-    }// end ghumti_Customize_Section_Upsell
+    }// end B86_s_Customize_Section_Upsell
 
 } //end WP_Customize_Control

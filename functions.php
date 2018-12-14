@@ -1,15 +1,15 @@
 <?php
 /**
- * Ghumti functions and definitions
+ * B86_s functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'ghumti_setup' ) ) :
+if ( ! function_exists( 'B86_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -17,14 +17,14 @@ if ( ! function_exists( 'ghumti_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function ghumti_setup() {
+function B86_s_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Ghumti, use a find and replace
-	 * to change 'ghumti' to the name of your theme in all the template files.
+	 * If you're building a theme based on B86_s, use a find and replace
+	 * to change 'B86_s' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'ghumti', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'B86_s', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,16 +44,16 @@ function ghumti_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'ghumti-slider', 1280, 600, true );
-	add_image_size( 'ghumti-slider-half', 866, 600, true );
-	add_image_size( 'ghumti-featured-medium', 768, 570, true );
-	add_image_size( 'ghumti-cat-square', 640, 583, true );
+	add_image_size( 'B86_s-slider', 1280, 600, true );
+	add_image_size( 'B86_s-slider-half', 866, 600, true );
+	add_image_size( 'B86_s-featured-medium', 768, 570, true );
+	add_image_size( 'B86_s-cat-square', 640, 583, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'ghumti_top_menu' => esc_html__( 'Top Menu', 'ghumti' ),
-		'ghumti_primary_menu' => esc_html__( 'Primary Menu', 'ghumti' ),
-		'ghumti_footer_menu' => esc_html__( 'Footer Menu', 'ghumti' )
+		'B86_s_top_menu' => esc_html__( 'Top Menu', 'B86_s' ),
+		'B86_s_primary_menu' => esc_html__( 'Primary Menu', 'B86_s' ),
+		'B86_s_footer_menu' => esc_html__( 'Footer Menu', 'B86_s' )
 	) );
 
 	/*
@@ -80,11 +80,11 @@ function ghumti_setup() {
 		'width'         => 1920,
 		'flex-height'    => true,
 		'height'        => 200,
-		'wp-head-callback'       => 'ghumti_header_style',
+		'wp-head-callback'       => 'B86_s_header_style',
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'ghumti_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'B86_s_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -99,15 +99,15 @@ function ghumti_setup() {
 	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif;
-add_action( 'after_setup_theme', 'ghumti_setup' );
+add_action( 'after_setup_theme', 'B86_s_setup' );
 
-if ( ! function_exists( 'ghumti_header_style' ) ) :
+if ( ! function_exists( 'B86_s_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @see the100_custom_header_setup().
  */
-function ghumti_header_style() {
+function B86_s_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*
@@ -152,34 +152,34 @@ endif;
  *
  * @global int $content_width
  */
-function ghumti_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ghumti_content_width', 640 );
+function B86_s_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'B86_s_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'ghumti_content_width', 0 );
+add_action( 'after_setup_theme', 'B86_s_content_width', 0 );
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /**
  * Set the theme version
  *
- * @global int $ghumti_version
+ * @global int $B86_s_version
  * @since 1.0.0
  */
-function ghumti_theme_version() {
-	$ghumti_theme_info = wp_get_theme();
-	$GLOBALS['ghumti_version'] = $ghumti_theme_info->get( 'Version' );
+function B86_s_theme_version() {
+	$B86_s_theme_info = wp_get_theme();
+	$GLOBALS['B86_s_version'] = $B86_s_theme_info->get( 'Version' );
 }
-add_action( 'after_setup_theme', 'ghumti_theme_version', 0 );
+add_action( 'after_setup_theme', 'B86_s_theme_version', 0 );
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function ghumti_pingback_header() {
+function B86_s_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'ghumti_pingback_header' );
+add_action( 'wp_head', 'B86_s_pingback_header' );
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /**
@@ -205,21 +205,21 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Widget function file
  */
-require get_template_directory() . '/inc/widgets/ghumti-widget-functions.php';
+require get_template_directory() . '/inc/widgets/B86_s-widget-functions.php';
 
 /**
  * Custom files for hook
  */
-require get_template_directory() . '/inc/hooks/ghumti-header-hooks.php';
-require get_template_directory() . '/inc/hooks/ghumti-widget-hooks.php';
-require get_template_directory() . '/inc/hooks/ghumti-custom-hooks.php';
-require get_template_directory() . '/inc/hooks/ghumti-footer-hooks.php';
+require get_template_directory() . '/inc/hooks/B86_s-header-hooks.php';
+require get_template_directory() . '/inc/hooks/B86_s-widget-hooks.php';
+require get_template_directory() . '/inc/hooks/B86_s-custom-hooks.php';
+require get_template_directory() . '/inc/hooks/B86_s-footer-hooks.php';
 
 /**
  * Custom files for post metabox
  */
 
-require get_template_directory() . '/inc/metaboxes/ghumti-post-metabox.php';
+require get_template_directory() . '/inc/metaboxes/B86_s-post-metabox.php';
 
 if ( ! function_exists( 'is_woocommerce_available' ) ) {
 	function is_woocommerce_available() {
@@ -230,9 +230,9 @@ if ( ! function_exists( 'is_woocommerce_available' ) ) {
 /**
  * Registers an editor stylesheet for the theme.
  */
-if(!function_exists('ghumti_editor_style')){
-	function ghumti_editor_style() {
-		add_editor_style( 'assets/css/ghumti-editor-style.css' );
+if(!function_exists('B86_s_editor_style')){
+	function B86_s_editor_style() {
+		add_editor_style( 'assets/css/B86_s-editor-style.css' );
 	}
-	add_action( 'admin_init', 'ghumti_editor_style' );
+	add_action( 'admin_init', 'B86_s_editor_style' );
 }

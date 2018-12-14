@@ -5,21 +5,21 @@
  * Widget show the block posts from selected category in different layouts.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_Block_Posts extends WP_widget {
+class B86_s_Block_Posts extends WP_widget {
 
 	/**
      * Register widget with WordPress.
      */
     public function __construct() {
         $widget_ops = array( 
-            'classname' => 'ghumti_block_posts ghumti-clearfix',
-            'description' => __( 'Displays block posts from selected category in different layouts.', 'ghumti' )
+            'classname' => 'B86_s_block_posts B86_s-clearfix',
+            'description' => __( 'Displays block posts from selected category in different layouts.', 'B86_s' )
         );
-        parent::__construct( 'ghumti_block_posts', __( 'AT: Block Posts', 'ghumti' ), $widget_ops );
+        parent::__construct( 'B86_s_block_posts', __( 'AT: Block Posts', 'B86_s' ), $widget_ops );
     }
 
     /**
@@ -31,17 +31,17 @@ class ghumti_Block_Posts extends WP_widget {
         $fields = array(
 
             'block_title' => array(
-                'ghumti_widgets_name'         => 'block_title',
-                'ghumti_widgets_title'        => __( 'Block title', 'ghumti' ),
-                'ghumti_widgets_description'  => __( 'Enter your block title. (Optional - Leave blank to hide title.)', 'ghumti' ),
-                'ghumti_widgets_field_type'   => 'text'
+                'B86_s_widgets_name'         => 'block_title',
+                'B86_s_widgets_title'        => __( 'Block title', 'B86_s' ),
+                'B86_s_widgets_description'  => __( 'Enter your block title. (Optional - Leave blank to hide title.)', 'B86_s' ),
+                'B86_s_widgets_field_type'   => 'text'
             ),
 
             'block_cat_slug' => array(
-                'ghumti_widgets_name'         => 'block_cat_slug',
-                'ghumti_widgets_title'        => __( 'Block Category', 'ghumti' ),
-                'ghumti_widgets_default'      => '',
-                'ghumti_widgets_field_type'   => 'category_dropdown'
+                'B86_s_widgets_name'         => 'block_cat_slug',
+                'B86_s_widgets_title'        => __( 'Block Category', 'B86_s' ),
+                'B86_s_widgets_default'      => '',
+                'B86_s_widgets_field_type'   => 'category_dropdown'
             ),
         );
         return $fields;
@@ -61,24 +61,24 @@ class ghumti_Block_Posts extends WP_widget {
             return ;
         }
 
-        $ghumti_block_title    = empty( $instance['block_title'] ) ? '' : $instance['block_title'];
-        $ghumti_block_cat_slug = empty( $instance['block_cat_slug'] ) ? '' : $instance['block_cat_slug'];
-        $ghumti_block_layout   = 'layout1';
+        $B86_s_block_title    = empty( $instance['block_title'] ) ? '' : $instance['block_title'];
+        $B86_s_block_cat_slug = empty( $instance['block_cat_slug'] ) ? '' : $instance['block_cat_slug'];
+        $B86_s_block_layout   = 'layout1';
 
         echo wp_kses_post($before_widget);
         ?>
-        <div class="ghumti-block-wrapper block-posts ghumti-clearfix <?php echo esc_attr( $ghumti_block_layout ); ?>">
+        <div class="B86_s-block-wrapper block-posts B86_s-clearfix <?php echo esc_attr( $B86_s_block_layout ); ?>">
             <?php 
-            if( !empty( $ghumti_block_title ) ) {
-                echo wp_kses_post($before_title) . esc_html( $ghumti_block_title ) . wp_kses_post($after_title);
+            if( !empty( $B86_s_block_title ) ) {
+                echo wp_kses_post($before_title) . esc_html( $B86_s_block_title ) . wp_kses_post($after_title);
             }
             ?>
-            <div class="ghumti-block-posts-wrapper ghumti-clearfix">
+            <div class="B86_s-block-posts-wrapper B86_s-clearfix">
             	<?php
-                ghumti_block_default_layout_section( $ghumti_block_cat_slug );
+                B86_s_block_default_layout_section( $B86_s_block_cat_slug );
                 ?>
-            </div><!-- .ghumti-block-posts-wrapper -->
-        </div><!--- .ghumti-block-wrapper -->
+            </div><!-- .B86_s-block-posts-wrapper -->
+        </div><!--- .B86_s-block-wrapper -->
         <?php
         echo wp_kses_post($after_widget);
     }
@@ -91,7 +91,7 @@ class ghumti_Block_Posts extends WP_widget {
      * @param   array   $new_instance   Values just sent to be saved.
      * @param   array   $old_instance   Previously saved values from database.
      *
-     * @uses    ghumti_widgets_updated_field_value()     defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_updated_field_value()     defined in B86_s-widget-fields.php
      *
      * @return  array Updated safe values to be saved.
      */
@@ -106,7 +106,7 @@ class ghumti_Block_Posts extends WP_widget {
             extract( $widget_field );
 
             // Use helper function to get updated field values
-            $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value( $widget_field, $new_instance[$ghumti_widgets_name] );
+            $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value( $widget_field, $new_instance[$B86_s_widgets_name] );
         }
 
         return $instance;
@@ -119,7 +119,7 @@ class ghumti_Block_Posts extends WP_widget {
      *
      * @param   array $instance Previously saved values from database.
      *
-     * @uses    ghumti_widgets_show_widget_field()       defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_show_widget_field()       defined in B86_s-widget-fields.php
      */
     public function form( $instance ) {
         $widget_fields = $this->widget_fields();
@@ -129,8 +129,8 @@ class ghumti_Block_Posts extends WP_widget {
 
             // Make array elements available as variables
             extract( $widget_field );
-            $ghumti_widgets_field_value = !empty( $instance[$ghumti_widgets_name] ) ? wp_kses_post( $instance[$ghumti_widgets_name] ) : '';
-            ghumti_widgets_show_widget_field( $this, $widget_field, $ghumti_widgets_field_value );
+            $B86_s_widgets_field_value = !empty( $instance[$B86_s_widgets_name] ) ? wp_kses_post( $instance[$B86_s_widgets_name] ) : '';
+            B86_s_widgets_show_widget_field( $this, $widget_field, $B86_s_widgets_field_value );
         }
     }
 }

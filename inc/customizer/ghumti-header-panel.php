@@ -1,15 +1,15 @@
 <?php
 /**
- * Ghumti Header Settings panel at Theme Customizer
+ * B86_s Header Settings panel at Theme Customizer
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-add_action( 'customize_register', 'ghumti_header_settings_register' );
+add_action( 'customize_register', 'B86_s_header_settings_register' );
 
-function ghumti_header_settings_register( $wp_customize ) {
+function B86_s_header_settings_register( $wp_customize ) {
 
 
 	/**
@@ -17,15 +17,15 @@ function ghumti_header_settings_register( $wp_customize ) {
      *
      * @since 1.0.0
      */
-    $wp_customize->add_panel('ghumti_header_settings_panel',array(
+    $wp_customize->add_panel('B86_s_header_settings_panel',array(
         'priority'       => 10,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
-        'title'          => __( 'Header Settings', 'ghumti' ),
+        'title'          => __( 'Header Settings', 'B86_s' ),
     ));
 
 
-$wp_customize->get_section('header_image')->panel = 'ghumti_header_settings_panel';
+$wp_customize->get_section('header_image')->panel = 'B86_s_header_settings_panel';
 $wp_customize->get_section('header_image')->title = 'Header Background Image';
 $wp_customize->get_section('header_image')->priority = 3;
 
@@ -34,11 +34,11 @@ $wp_customize->get_section('header_image')->priority = 3;
      * Header Section
      */
     $wp_customize->add_section(
-        'ghumti_header_option_section',
+        'B86_s_header_option_section',
         array(
-            'title'     => __( 'General Header Options', 'ghumti' ),
+            'title'     => __( 'General Header Options', 'B86_s' ),
             'priority'  => 5,
-            'panel'     => 'ghumti_header_settings_panel'
+            'panel'     => 'B86_s_header_settings_panel'
         )
     );
 
@@ -48,21 +48,21 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_top_header_option',
+        'B86_s_top_header_option',
         array(
             'default' => 'show',
-            'sanitize_callback' => 'ghumti_sanitize_switch_option',
+            'sanitize_callback' => 'B86_s_sanitize_switch_option',
         )
     );
-    $wp_customize->add_control( new ghumti_Customize_Switch_Control(
-        $wp_customize, 'ghumti_top_header_option', array(
+    $wp_customize->add_control( new B86_s_Customize_Switch_Control(
+        $wp_customize, 'B86_s_top_header_option', array(
             'type'      => 'switch',
-            'label'     => esc_html__( 'Top Header Section', 'ghumti' ),
-            'description'   => esc_html__( 'Show/Hide option for top header section.', 'ghumti' ),
-            'section'   => 'ghumti_header_option_section',
+            'label'     => esc_html__( 'Top Header Section', 'B86_s' ),
+            'description'   => esc_html__( 'Show/Hide option for top header section.', 'B86_s' ),
+            'section'   => 'B86_s_header_option_section',
             'choices'   => array(
-                'show'  => esc_html__( 'Show', 'ghumti' ),
-                'hide'  => esc_html__( 'Hide', 'ghumti' )
+                'show'  => esc_html__( 'Show', 'B86_s' ),
+                'hide'  => esc_html__( 'Hide', 'B86_s' )
             ),
             'priority'  => 5,
         )
@@ -74,23 +74,23 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_top_icons_option',
+        'B86_s_top_icons_option',
         array(
             'default' => 'show',
-            'sanitize_callback' => 'ghumti_sanitize_switch_option',
+            'sanitize_callback' => 'B86_s_sanitize_switch_option',
         )
     );
-    $wp_customize->add_control( new ghumti_Customize_Switch_Control(
+    $wp_customize->add_control( new B86_s_Customize_Switch_Control(
         $wp_customize,
-        'ghumti_top_icons_option',
+        'B86_s_top_icons_option',
         array(
             'type'      => 'switch',
-            'label'     => esc_html__( 'User & Cart Icons', 'ghumti' ),
-            'description'   => esc_html__( 'Show/Hide option for user,cart and wishlist icon beside logo.', 'ghumti' ),
-            'section'   => 'ghumti_header_option_section',
+            'label'     => esc_html__( 'User & Cart Icons', 'B86_s' ),
+            'description'   => esc_html__( 'Show/Hide option for user,cart and wishlist icon beside logo.', 'B86_s' ),
+            'section'   => 'B86_s_header_option_section',
             'choices'   => array(
-                'show'  => esc_html__( 'Show', 'ghumti' ),
-                'hide'  => esc_html__( 'Hide', 'ghumti' )
+                'show'  => esc_html__( 'Show', 'B86_s' ),
+                'hide'  => esc_html__( 'Hide', 'B86_s' )
             ),
             'priority'  => 10,
         )
@@ -102,23 +102,23 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_search_icon_option',
+        'B86_s_search_icon_option',
         array(
             'default' => 'show',
-            'sanitize_callback' => 'ghumti_sanitize_switch_option',
+            'sanitize_callback' => 'B86_s_sanitize_switch_option',
         )
     );
-    $wp_customize->add_control( new ghumti_Customize_Switch_Control(
+    $wp_customize->add_control( new B86_s_Customize_Switch_Control(
         $wp_customize,
-        'ghumti_search_icon_option',
+        'B86_s_search_icon_option',
         array(
             'type'      => 'switch',
-            'label'     => esc_html__( 'Search Icon', 'ghumti' ),
-            'description'   => esc_html__( 'Show/Hide option for search icon at primary menu.', 'ghumti' ),
-            'section'   => 'ghumti_header_option_section',
+            'label'     => esc_html__( 'Search Icon', 'B86_s' ),
+            'description'   => esc_html__( 'Show/Hide option for search icon at primary menu.', 'B86_s' ),
+            'section'   => 'B86_s_header_option_section',
             'choices'   => array(
-                'show'  => esc_html__( 'Show', 'ghumti' ),
-                'hide'  => esc_html__( 'Hide', 'ghumti' )
+                'show'  => esc_html__( 'Show', 'B86_s' ),
+                'hide'  => esc_html__( 'Hide', 'B86_s' )
             ),
             'priority'  => 15,
         )
@@ -129,11 +129,11 @@ $wp_customize->get_section('header_image')->priority = 3;
      * Ticker Section
      */
     $wp_customize->add_section(
-        'ghumti_ticker_section',
+        'B86_s_ticker_section',
         array(
-            'title'     => __( 'Ticker Section', 'ghumti' ),
+            'title'     => __( 'Ticker Section', 'B86_s' ),
             'priority'  => 15,
-            'panel'     => 'ghumti_header_settings_panel'
+            'panel'     => 'B86_s_header_settings_panel'
         )
     );
 
@@ -143,23 +143,23 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_ticker_option',
+        'B86_s_ticker_option',
         array(
             'default' => 'show',
-            'sanitize_callback' => 'ghumti_sanitize_switch_option',
+            'sanitize_callback' => 'B86_s_sanitize_switch_option',
         )
     );
-    $wp_customize->add_control( new ghumti_Customize_Switch_Control(
+    $wp_customize->add_control( new B86_s_Customize_Switch_Control(
         $wp_customize,
-        'ghumti_ticker_option',
+        'B86_s_ticker_option',
         array(
             'type'      => 'switch',
-            'label'     => esc_html__( 'Ticker Option', 'ghumti' ),
-            'description'   => esc_html__( 'Show/Hide option for news ticker section.', 'ghumti' ),
-            'section'   => 'ghumti_ticker_section',
+            'label'     => esc_html__( 'Ticker Option', 'B86_s' ),
+            'description'   => esc_html__( 'Show/Hide option for news ticker section.', 'B86_s' ),
+            'section'   => 'B86_s_ticker_section',
             'choices'   => array(
-                'show'  => esc_html__( 'Show', 'ghumti' ),
-                'hide'  => esc_html__( 'Hide', 'ghumti' )
+                'show'  => esc_html__( 'Show', 'B86_s' ),
+                'hide'  => esc_html__( 'Hide', 'B86_s' )
             ),
             'priority'  => 5,
         )
@@ -171,27 +171,27 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_ticker_caption',
+        'B86_s_ticker_caption',
         array(
-            'default'    => __( 'Breaking News', 'ghumti' ),
+            'default'    => __( 'Breaking News', 'B86_s' ),
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
     $wp_customize->add_control(
-        'ghumti_ticker_caption',
+        'B86_s_ticker_caption',
         array(
             'type'      => 'text',
-            'label'     => esc_html__( 'Ticker Caption', 'ghumti' ),
-            'section'   => 'ghumti_ticker_section',
+            'label'     => esc_html__( 'Ticker Caption', 'B86_s' ),
+            'section'   => 'B86_s_ticker_section',
             'priority'  => 10
         )
     );
     $wp_customize->selective_refresh->add_partial(
-        'ghumti_ticker_caption', 
+        'B86_s_ticker_caption', 
         array(
             'selector' => '.ticker-caption',
-            'render_callback' => 'ghumti_customize_partial_ticker_caption',
+            'render_callback' => 'B86_s_customize_partial_ticker_caption',
         )
     );
 
@@ -202,10 +202,10 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_section(
-        'ghumti_social_icons_section',
+        'B86_s_social_icons_section',
         array(
-            'title'     => esc_html__( 'Social Icons', 'ghumti' ),
-            'panel'     => 'ghumti_header_settings_panel',
+            'title'     => esc_html__( 'Social Icons', 'B86_s' ),
+            'panel'     => 'B86_s_header_settings_panel',
             'priority'  => 5,
         )
     );
@@ -216,23 +216,23 @@ $wp_customize->get_section('header_image')->priority = 3;
      * @since 1.0.0
      */
     $wp_customize->add_setting(
-        'ghumti_top_social_option',
+        'B86_s_top_social_option',
         array(
             'default' => 'show',
-            'sanitize_callback' => 'ghumti_sanitize_switch_option',
+            'sanitize_callback' => 'B86_s_sanitize_switch_option',
         )
     );
-    $wp_customize->add_control( new ghumti_Customize_Switch_Control(
+    $wp_customize->add_control( new B86_s_Customize_Switch_Control(
         $wp_customize,
-        'ghumti_top_social_option',
+        'B86_s_top_social_option',
         array(
             'type'      => 'switch',
-            'label'     => esc_html__( 'Social Icons', 'ghumti' ),
-            'description'   => esc_html__( 'Show/Hide option for social media icons at top header section.', 'ghumti' ),
-            'section'   => 'ghumti_social_icons_section',
+            'label'     => esc_html__( 'Social Icons', 'B86_s' ),
+            'description'   => esc_html__( 'Show/Hide option for social media icons at top header section.', 'B86_s' ),
+            'section'   => 'B86_s_social_icons_section',
             'choices'   => array(
-                'show'  => esc_html__( 'Show', 'ghumti' ),
-                'hide'  => esc_html__( 'Hide', 'ghumti' )
+                'show'  => esc_html__( 'Show', 'B86_s' ),
+                'hide'  => esc_html__( 'Hide', 'B86_s' )
             ),
             'priority'  => 5,
         )
@@ -246,7 +246,7 @@ $wp_customize->get_section('header_image')->priority = 3;
     $wp_customize->add_setting( 
         'social_media_icons', 
         array(
-            'sanitize_callback' => 'ghumti_sanitize_repeater',
+            'sanitize_callback' => 'B86_s_sanitize_repeater',
             'default' => json_encode(array(
                 array(
                     'social_icon_class' => 'fa fa-facebook-f',
@@ -255,27 +255,27 @@ $wp_customize->get_section('header_image')->priority = 3;
             ))
         )
     );
-    $wp_customize->add_control( new ghumti_Repeater_Controler(
+    $wp_customize->add_control( new B86_s_Repeater_Controler(
         $wp_customize, 
         'social_media_icons', 
         array(
-            'label'   => __( 'Social Media Icons', 'ghumti' ),
-            'section' => 'ghumti_social_icons_section',
+            'label'   => __( 'Social Media Icons', 'B86_s' ),
+            'section' => 'B86_s_social_icons_section',
             'settings' => 'social_media_icons',
             'priority' => 15,
-            'ghumti_box_label' => __( 'Social Media Icon','ghumti' ),
-            'ghumti_box_add_control' => __( 'Add Icon','ghumti' )
+            'B86_s_box_label' => __( 'Social Media Icon','B86_s' ),
+            'B86_s_box_add_control' => __( 'Add Icon','B86_s' )
         ),
         array(
             'social_icon_class' => array(
                 'type'        => 'social_icon',
-                'label'       => __( 'Social Media Logo', 'ghumti' ),
-                'description' => __( 'Choose social media icon.', 'ghumti' )
+                'label'       => __( 'Social Media Logo', 'B86_s' ),
+                'description' => __( 'Choose social media icon.', 'B86_s' )
             ),
             'social_icon_url' => array(
                 'type'        => 'url',
-                'label'       => __( 'Social Icon Url', 'ghumti' ),
-                'description' => __( 'Enter social media url.', 'ghumti' )
+                'label'       => __( 'Social Icon Url', 'B86_s' ),
+                'description' => __( 'Enter social media url.', 'B86_s' )
             )
         )
     ));

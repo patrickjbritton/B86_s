@@ -34,7 +34,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	/** do_action( 'woocommerce_before_shop_loop_item_title' ); */
     wc_get_template( 'loop/sale-flash.php' );
-    $size = 'ghumti-slider';
+    $size = 'B86_s-slider';
     $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
     echo wp_kses_post($product->get_image( $image_size ));
     
@@ -62,7 +62,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 
-	esc_html_e('View Product','ghumti');
+	esc_html_e('View Product','B86_s');
 	/**
 	 * Hook: woocommerce_after_shop_loop_item.
 	 *

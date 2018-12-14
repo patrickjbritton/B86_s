@@ -96,32 +96,32 @@
 /*=================================================
             Repeater field
 =================================================*/
-.ghumti-clearfix:after,
-.ghumti-clearfix:before{
+.B86_s-clearfix:after,
+.B86_s-clearfix:before{
     content: "";
     display: table;
 }
 
-.ghumti-clearfix:after{
+.B86_s-clearfix:after{
     clear: both;
 }
 
-.ghumti-repeater-field-control{
+.B86_s-repeater-field-control{
     background: #FFF;
     margin-bottom: 12px;
     display: block;
 }
 
-.ghumti-repeater-footer{
+.B86_s-repeater-footer{
     margin-top: 15px;
     text-align: right;
 }
 
-.ghumti-repeater-field-control:first-child .ghumti-repeater-footer{
+.B86_s-repeater-field-control:first-child .B86_s-repeater-footer{
     display: none;
 }
 
-.ghumti-repeater-field-title{
+.B86_s-repeater-field-title{
     padding: 13px 15px;
     line-height: 1;
     overflow: hidden;
@@ -135,7 +135,7 @@
     border-bottom: 0;
 }
 
-.ghumti-repeater-field-title:after {
+.B86_s-repeater-field-title:after {
     content: "\f142";
     font: 400 20px/1 dashicons;
     position: absolute;
@@ -149,11 +149,11 @@
     cursor: pointer;
 }
 
-.ghumti-repeater-field-control.expanded .ghumti-repeater-field-title:after{
+.B86_s-repeater-field-control.expanded .B86_s-repeater-field-title:after{
     content: "\f140";
 }
 
-.ghumti-repeater-fields{
+.B86_s-repeater-fields{
     padding: 0 10px 10px;
     border-top: none;
     line-height: 16px;
@@ -162,19 +162,19 @@
     display: none;
 }
 
-.ghumti-repeater-fields .customize-control-title{
+.B86_s-repeater-fields .customize-control-title{
     margin-top: 10px;
 }
 
-.ghumti-repeater-field-control.expanded .ghumti-repeater-fields{
+.B86_s-repeater-field-control.expanded .B86_s-repeater-fields{
     display: block;
 }
 
-.ghumti-reapeater-add-control-field {
+.B86_s-reapeater-add-control-field {
     float: right;
 }
 
-.ghumti-reapeater-add-add-control-field:before {
+.B86_s-reapeater-add-add-control-field:before {
     content: "\f132";
     display: inline-block;
     position: relative;
@@ -184,11 +184,11 @@
     vertical-align: middle;
 }
 
-.ghumti-repeater-type-icon{
+.B86_s-repeater-type-icon{
     overflow: hidden;
 }
 
-.ghumti-repeater-selected-icon{
+.B86_s-repeater-selected-icon{
     background: #F6F6F6;
     height: 45px;
     line-height: 45px;
@@ -200,7 +200,7 @@
     font-size: 28px;
 }
 
-.ghumti-repeater-selected-icon span{
+.B86_s-repeater-selected-icon span{
     position: absolute;
     background: #F6F6F6;
     right: -45px;
@@ -211,7 +211,7 @@
     font-size: 20px;
 }
 
-.ghumti-repeater-icon-list{
+.B86_s-repeater-icon-list{
     height: 215px;
     overflow-y: scroll;
     font-size: 18px;
@@ -226,7 +226,7 @@
     -webkit-box-sizing: border-box;
 }
 
-.ghumti-repeater-icon-list li{
+.B86_s-repeater-icon-list li{
     float: left;
     margin: 4% 3% 0;
     height: 40px;
@@ -236,23 +236,23 @@
     border: 1px solid #EEE;
 }
 
-.ghumti-repeater-icon-list li:hover{
+.B86_s-repeater-icon-list li:hover{
     background: #333;
     border: 1px solid #333;
     color: #FFF;
 }
 
-.ghumti-repeater-icon-list li.icon-active{
+.B86_s-repeater-icon-list li.icon-active{
     background: #0073aa;
     border: 1px solid #0073aa;
     color: #FFF;
 }
 
-.customize-control-repeater .ghumti-limit-msg {
+.customize-control-repeater .B86_s-limit-msg {
     display:  none;
 }
 
-.customize-control-repeater span.ghumti-limit-msg:nth-of-type(2) {
+.customize-control-repeater span.B86_s-limit-msg:nth-of-type(2) {
     display: block;
     background: #fff;
     padding: 10px 15px;

@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -18,30 +18,30 @@
 
 <?php
 		/**
-	     * ghumti_footer hook
-	     * @hooked - ghumti_footer_start - 5
-	     * @hooked - ghumti_top_footer_widget_section - 10
-	     * @hooked - ghumti_main_footer_start - 15
-	     * @hooked - ghumti_footer_menu_section - 20
-	     * @hooked - ghumti_footer_site_info_section - 25
-	     * @hooked - ghumti_main_footer_widget_section - 30
-	     * @hooked - ghumti_footer_menu_section - 35
-	     * @hooked - ghumti_bottom_footer_end - 40
-	     * @hooked - ghumti_footer_end - 45
+	     * B86_s_footer hook
+	     * @hooked - B86_s_footer_start - 5
+	     * @hooked - B86_s_top_footer_widget_section - 10
+	     * @hooked - B86_s_main_footer_start - 15
+	     * @hooked - B86_s_footer_menu_section - 20
+	     * @hooked - B86_s_footer_site_info_section - 25
+	     * @hooked - B86_s_main_footer_widget_section - 30
+	     * @hooked - B86_s_footer_menu_section - 35
+	     * @hooked - B86_s_bottom_footer_end - 40
+	     * @hooked - B86_s_footer_end - 45
 	     *
 	     * @since 1.0.0
 	     */
-		do_action( 'ghumti_footer' );
+		do_action( 'B86_s_footer' );
 		?>
 	</div><!-- #page -->
 
 	<?php
 	/**
-     * ghumti_after_page hook
+     * B86_s_after_page hook
      *
      * @since 1.0.0
      */
-	do_action( 'ghumti_after_page' );
+	do_action( 'B86_s_after_page' );
 	?>
 
 	<?php wp_footer(); ?>

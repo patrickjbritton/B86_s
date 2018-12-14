@@ -5,21 +5,21 @@
  * Widget show the posts from selected categories in carousel layouts.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_product_Carousel extends WP_widget {
+class B86_s_product_Carousel extends WP_widget {
 
 	/**
      * Register widget with WordPress.
      */
     public function __construct() {
         $widget_ops = array( 
-            'classname' => 'ghumti_product_carousel',
-            'description' => __( 'Displays products from selected categories in carousel.', 'ghumti' )
+            'classname' => 'B86_s_product_carousel',
+            'description' => __( 'Displays products from selected categories in carousel.', 'B86_s' )
         );
-        parent::__construct( 'ghumti_product_carousel', __( 'AT: Product Carousel', 'ghumti' ), $widget_ops );
+        parent::__construct( 'B86_s_product_carousel', __( 'AT: Product Carousel', 'B86_s' ), $widget_ops );
     }
 
     /**
@@ -28,22 +28,22 @@ class ghumti_product_Carousel extends WP_widget {
      */
     private function widget_fields() {
 
-        $ghumti_woocommerce_categories_lists = ghumti_woocommerce_categories_lists();
+        $B86_s_woocommerce_categories_lists = B86_s_woocommerce_categories_lists();
         
         $fields = array(
 
             'product_title' => array(
-                'ghumti_widgets_name'         => 'product_title',
-                'ghumti_widgets_title'        => __( 'Widget title', 'ghumti' ),
-                'ghumti_widgets_description'  => __( 'Enter your product title. (Optional - Leave blank to hide title.)', 'ghumti' ),
-                'ghumti_widgets_field_type'   => 'text'
+                'B86_s_widgets_name'         => 'product_title',
+                'B86_s_widgets_title'        => __( 'Widget title', 'B86_s' ),
+                'B86_s_widgets_description'  => __( 'Enter your product title. (Optional - Leave blank to hide title.)', 'B86_s' ),
+                'B86_s_widgets_field_type'   => 'text'
             ),
 
             'product_cat_slugs' => array(
-                'ghumti_widgets_name'         => 'product_cat_slugs',
-                'ghumti_widgets_title'        => __( 'Product Categories', 'ghumti' ),
-                'ghumti_widgets_field_type'   => 'select',
-                'ghumti_widgets_field_options' => $ghumti_woocommerce_categories_lists
+                'B86_s_widgets_name'         => 'product_cat_slugs',
+                'B86_s_widgets_title'        => __( 'Product Categories', 'B86_s' ),
+                'B86_s_widgets_field_type'   => 'select',
+                'B86_s_widgets_field_options' => $B86_s_woocommerce_categories_lists
             )
         );
         return $fields;
@@ -64,10 +64,10 @@ class ghumti_product_Carousel extends WP_widget {
         }
 
         $cat_product_title      = empty( $instance['product_title'] ) ? '' : $instance['product_title'];
-        $ghumti_product_cat  = empty( $instance['product_cat_slugs'] ) ? '' : $instance['product_cat_slugs'];
-        $ghumti_product_layout     = 'layout1';
+        $B86_s_product_cat  = empty( $instance['product_cat_slugs'] ) ? '' : $instance['product_cat_slugs'];
+        $B86_s_product_layout     = 'layout1';
 
-        if(!empty($ghumti_product_cat)) {
+        if(!empty($B86_s_product_cat)) {
             echo wp_kses_post($before_widget);
             ?>
             <div class="cat-product-wrap clearfix">
@@ -76,14 +76,14 @@ class ghumti_product_Carousel extends WP_widget {
                 echo wp_kses_post($before_title) . esc_html( $cat_product_title ) . wp_kses_post($after_title);
             }
             ?>
-            <div class="ghumti-product-carousel-wrap">
-                <ul class="ghumti-product-carousel owl-carousel">
+            <div class="B86_s-product-carousel-wrap">
+                <ul class="B86_s-product-carousel owl-carousel">
                     <?php 
                     $prod_args = array(
                         'post_type' => 'product',
                         'tax_query' => array(array('taxonomy'  => 'product_cat',
                             'field'     => 'id', 
-                            'terms'     => $ghumti_product_cat                                                                 
+                            'terms'     => $B86_s_product_cat                                                                 
                         )),
                         'posts_per_page' => '4'
                     );
@@ -112,7 +112,7 @@ class ghumti_product_Carousel extends WP_widget {
      * @param   array   $new_instance   Values just sent to be saved.
      * @param   array   $old_instance   Previously saved values from database.
      *
-     * @uses    ghumti_widgets_updated_field_value()     defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_updated_field_value()     defined in B86_s-widget-fields.php
      *
      * @return  array Updated safe values to be saved.
      */
@@ -127,7 +127,7 @@ class ghumti_product_Carousel extends WP_widget {
             extract( $widget_field );
 
             // Use helper function to get updated field values
-            $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value( $widget_field, $new_instance[$ghumti_widgets_name] );
+            $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value( $widget_field, $new_instance[$B86_s_widgets_name] );
         }
 
         return $instance;
@@ -140,7 +140,7 @@ class ghumti_product_Carousel extends WP_widget {
      *
      * @param   array $instance Previously saved values from database.
      *
-     * @uses    ghumti_widgets_show_widget_field()       defined in ghumti-widget-fields.php
+     * @uses    B86_s_widgets_show_widget_field()       defined in B86_s-widget-fields.php
      */
     public function form( $instance ) {
         $widget_fields = $this->widget_fields();
@@ -150,8 +150,8 @@ class ghumti_product_Carousel extends WP_widget {
 
             // Make array elements available as variables
             extract( $widget_field );
-            $ghumti_widgets_field_value = !empty( $instance[$ghumti_widgets_name] ) ? wp_kses_post( $instance[$ghumti_widgets_name] ) : '';
-            ghumti_widgets_show_widget_field( $this, $widget_field, $ghumti_widgets_field_value );
+            $B86_s_widgets_field_value = !empty( $instance[$B86_s_widgets_name] ) ? wp_kses_post( $instance[$B86_s_widgets_name] ) : '';
+            B86_s_widgets_show_widget_field( $this, $widget_field, $B86_s_widgets_field_value );
         }
     }
 }

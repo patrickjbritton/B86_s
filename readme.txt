@@ -1,4 +1,4 @@
-=== Ghumti ===
+=== B86_s ===
 
 Contributors:       aquariusthemes
 Requires at least:  WordPress 4.0
@@ -13,23 +13,23 @@ Tags:               ecommerce, grid-layout, custom-colors, one-column, two-colum
 
 == Description ==
 
-Ghumti is a modern ecommerce theme with creative design and powerful features that lets you write articles and blog posts with ease. It uses the best clean SEO practices, responsive HTML5, and on top of that, it’s fast, simple, and easy to use.  Use the Customizer to add your own background, page layout, site width and more.
+B86_s is a modern ecommerce theme with creative design and powerful features that lets you write articles and blog posts with ease. It uses the best clean SEO practices, responsive HTML5, and on top of that, it’s fast, simple, and easy to use.  Use the Customizer to add your own background, page layout, site width and more.
 
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-Check further documentation here: https://aquariusthemes.com/documentation/ghumti/
+Check further documentation here: https://aquariusthemes.com/documentation/B86_s/
 
 == Copyright ==
 
-Ghumti WordPress Theme, Copyright 2018 AquariusThemes.
-Ghumti is distributed under the terms of the GNU GPL
+B86_s WordPress Theme, Copyright 2018 AquariusThemes.
+B86_s is distributed under the terms of the GNU GPL
 
 Some functions about widgets are inspired from VMag.
 
-Ghumti bundles the following third-party resources:
+B86_s bundles the following third-party resources:
 
 Font Awesome by Dave Gandy
 

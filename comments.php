@@ -8,7 +8,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -33,13 +33,13 @@ if ( post_password_required() ) {
 				if ( 1 === $comment_count ) {
 					printf(
 						/* translators: 1: title. */
-						esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'ghumti' ),
+						esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'B86_s' ),
 						'<span>' . get_the_title() . '</span>'
 					);
 				} else {
 					printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'ghumti' ) ),
+						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'B86_s' ) ),
 						number_format_i18n( $comment_count ),
 						'<span>' . get_the_title() . '</span>'
 					);
@@ -49,11 +49,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'ghumti' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'B86_s' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'ghumti' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'ghumti' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'B86_s' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'B86_s' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
@@ -70,11 +70,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'ghumti' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'B86_s' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'ghumti' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'ghumti' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'B86_s' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'B86_s' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
@@ -87,7 +87,7 @@ if ( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'ghumti' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'B86_s' ); ?></p>
 	<?php
 	endif;
 

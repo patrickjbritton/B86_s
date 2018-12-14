@@ -5,21 +5,21 @@
  * Widget show the call to action with shortcode inserted.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
-class ghumti_cta_form extends WP_Widget {
+class B86_s_cta_form extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         $widget_ops = array( 
-            'classname' => 'ghumti_cta_form',
-            'description' => __( 'A widget that shows Call to Action with Form.', 'ghumti' )
+            'classname' => 'B86_s_cta_form',
+            'description' => __( 'A widget that shows Call to Action with Form.', 'B86_s' )
         );
-        parent::__construct( 'ghumti_cta_form', __( 'AT: Call to Action with Form', 'ghumti' ), $widget_ops );
+        parent::__construct( 'B86_s_cta_form', __( 'AT: Call to Action with Form', 'B86_s' ), $widget_ops );
     }
 
     /**
@@ -29,19 +29,19 @@ class ghumti_cta_form extends WP_Widget {
     private function widget_fields() {
         $fields = array(
             'cta_form_title' => array(
-                'ghumti_widgets_name' => 'cta_form_title',
-                'ghumti_widgets_title' => __('Title', 'ghumti'),
-                'ghumti_widgets_field_type' => 'text',
+                'B86_s_widgets_name' => 'cta_form_title',
+                'B86_s_widgets_title' => __('Title', 'B86_s'),
+                'B86_s_widgets_field_type' => 'text',
             ),
             'cta_form_desc' => array(
-                'ghumti_widgets_name' => 'cta_form_desc',
-                'ghumti_widgets_title' => __('Description', 'ghumti'),
-                'ghumti_widgets_field_type' => 'textarea',
+                'B86_s_widgets_name' => 'cta_form_desc',
+                'B86_s_widgets_title' => __('Description', 'B86_s'),
+                'B86_s_widgets_field_type' => 'textarea',
             ),
             'cta_form_sc' => array(
-                'ghumti_widgets_name' => 'cta_form_sc',
-                'ghumti_widgets_title' => __('Contact Form Shortcode', 'ghumti'),
-                'ghumti_widgets_field_type' => 'textarea',
+                'B86_s_widgets_name' => 'cta_form_sc',
+                'B86_s_widgets_title' => __('Contact Form Shortcode', 'B86_s'),
+                'B86_s_widgets_field_type' => 'textarea',
             ),            
         );
 
@@ -95,7 +95,7 @@ class ghumti_cta_form extends WP_Widget {
      * @param	array	$new_instance	Values just sent to be saved.
      * @param	array	$old_instance	Previously saved values from database.
      *
-     * @uses	ghumti_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses	B86_s_widgets_updated_field_value()		defined in widget-fields.php
      *
      * @return	array Updated safe values to be saved.
      */
@@ -110,7 +110,7 @@ class ghumti_cta_form extends WP_Widget {
             extract($widget_field);
 
             // Use helper function to get updated field values
-            $instance[$ghumti_widgets_name] = ghumti_widgets_updated_field_value($widget_field, $new_instance[$ghumti_widgets_name]);
+            $instance[$B86_s_widgets_name] = B86_s_widgets_updated_field_value($widget_field, $new_instance[$B86_s_widgets_name]);
         }
 
         return $instance;
@@ -123,7 +123,7 @@ class ghumti_cta_form extends WP_Widget {
      *
      * @param	array $instance Previously saved values from database.
      *
-     * @uses	ghumti_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses	B86_s_widgets_show_widget_field()		defined in widget-fields.php
      */
     public function form($instance) {
         $widget_fields = $this->widget_fields();
@@ -133,8 +133,8 @@ class ghumti_cta_form extends WP_Widget {
 
             // Make array elements available as variables
             extract($widget_field);
-            $ghumti_widgets_field_value = !empty($instance[$ghumti_widgets_name]) ? esc_attr($instance[$ghumti_widgets_name]) : '';
-            ghumti_widgets_show_widget_field($this, $widget_field, $ghumti_widgets_field_value);
+            $B86_s_widgets_field_value = !empty($instance[$B86_s_widgets_name]) ? esc_attr($instance[$B86_s_widgets_name]) : '';
+            B86_s_widgets_show_widget_field($this, $widget_field, $B86_s_widgets_field_value);
         }
     }
 }

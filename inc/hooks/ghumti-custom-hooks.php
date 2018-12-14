@@ -3,7 +3,7 @@
  * Custom hooks functions are define.
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -13,9 +13,9 @@
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'ghumti_related_posts_start' ) ) :
-	function ghumti_related_posts_start() {
-		echo '<div class="ghumti-related-section-wrapper">';
+if( ! function_exists( 'B86_s_related_posts_start' ) ) :
+	function B86_s_related_posts_start() {
+		echo '<div class="B86_s-related-section-wrapper">';
 	}
 endif;
 
@@ -24,15 +24,15 @@ endif;
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'ghumti_related_posts_section' ) ) :
-	function ghumti_related_posts_section() {
-		$ghumti_related_option = get_theme_mod( 'ghumti_related_posts_option', 'show' );
-		if( $ghumti_related_option == 'hide' ) {
+if( ! function_exists( 'B86_s_related_posts_section' ) ) :
+	function B86_s_related_posts_section() {
+		$B86_s_related_option = get_theme_mod( 'B86_s_related_posts_option', 'show' );
+		if( $B86_s_related_option == 'hide' ) {
 			return;
 		}
-		$ghumti_related_title = get_theme_mod( 'ghumti_related_posts_title', __( 'Related Posts', 'ghumti' ) );
-		if( !empty( $ghumti_related_title ) ) {
-			echo '<h2 class="ghumti-related-title ghumti-clearfix">'. esc_html( $ghumti_related_title ) .'</h2>';
+		$B86_s_related_title = get_theme_mod( 'B86_s_related_posts_title', __( 'Related Posts', 'B86_s' ) );
+		if( !empty( $B86_s_related_title ) ) {
+			echo '<h2 class="B86_s-related-title B86_s-clearfix">'. esc_html( $B86_s_related_title ) .'</h2>';
 		}
 		global $post;
         if( empty( $post ) ) {
@@ -47,7 +47,7 @@ if( ! function_exists( 'ghumti_related_posts_section' ) ) :
                 $category_ids[] = $category_ed->term_id;
             }
         }
-		$ghumti_post_count = apply_filters( 'ghumti_related_posts_count', 3 );
+		$B86_s_post_count = apply_filters( 'B86_s_related_posts_count', 3 );
 		
 		$related_args = array(
 				'no_found_rows'            	=> true,
@@ -57,30 +57,30 @@ if( ! function_exists( 'ghumti_related_posts_section' ) ) :
                 'orderby'                  	=> 'rand',
                 'post__not_in'             	=> array( $post_id ),
                 'category__in'				=> $category_ids,
-				'posts_per_page' 		   	=> $ghumti_post_count
+				'posts_per_page' 		   	=> $B86_s_post_count
 			);
 		$related_query = new WP_Query( $related_args );
 		if( $related_query->have_posts() ) {
-			echo '<div class="ghumti-related-posts-wrap ghumti-clearfix">';
+			echo '<div class="B86_s-related-posts-wrap B86_s-clearfix">';
 			while( $related_query->have_posts() ) {
 				$related_query->the_post();
 	?>
-				<div class="ghumti-single-post ghumti-clearfix">
-					<div class="ghumti-post-thumb">
+				<div class="B86_s-single-post B86_s-clearfix">
+					<div class="B86_s-post-thumb">
 						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'ghumti-block-medium' ); ?>
+							<?php the_post_thumbnail( 'B86_s-block-medium' ); ?>
 						</a>
-					</div><!-- .ghumti-post-thumb -->
-					<div class="ghumti-post-content">
-						<h3 class="ghumti-post-title small-size"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<div class="ghumti-post-meta">
-							<?php ghumti_posted_on(); ?>
+					</div><!-- .B86_s-post-thumb -->
+					<div class="B86_s-post-content">
+						<h3 class="B86_s-post-title small-size"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<div class="B86_s-post-meta">
+							<?php B86_s_posted_on(); ?>
 						</div>
-					</div><!-- .ghumti-post-content -->
-				</div><!-- .ghumti-single-post -->
+					</div><!-- .B86_s-post-content -->
+				</div><!-- .B86_s-single-post -->
 	<?php
 			}
-			echo '</div><!-- .ghumti-related-posts-wrap -->';
+			echo '</div><!-- .B86_s-related-posts-wrap -->';
 			wp_reset_postdata();
 		}
 	}
@@ -91,9 +91,9 @@ endif;
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'ghumti_related_posts_end' ) ) :
-	function ghumti_related_posts_end() {
-		echo '</div><!-- .ghumti-related-section-wrapper -->';
+if( ! function_exists( 'B86_s_related_posts_end' ) ) :
+	function B86_s_related_posts_end() {
+		echo '</div><!-- .B86_s-related-section-wrapper -->';
 	}
 endif;
 
@@ -102,6 +102,6 @@ endif;
  *
  * @since 1.0.0
  */
-add_action( 'ghumti_related_posts', 'ghumti_related_posts_start', 5 );
-add_action( 'ghumti_related_posts', 'ghumti_related_posts_section', 10 );
-add_action( 'ghumti_related_posts', 'ghumti_related_posts_end', 15 );
+add_action( 'B86_s_related_posts', 'B86_s_related_posts_start', 5 );
+add_action( 'B86_s_related_posts', 'B86_s_related_posts_section', 10 );
+add_action( 'B86_s_related_posts', 'B86_s_related_posts_end', 15 );

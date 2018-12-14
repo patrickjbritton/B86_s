@@ -10,7 +10,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package AquariusThemes
- * @subpackage Ghumti
+ * @subpackage B86_s
  * @since 1.0.0
  */
 
@@ -49,5 +49,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-ghumti_get_sidebar();
+B86_s_get_sidebar();
 get_footer();
